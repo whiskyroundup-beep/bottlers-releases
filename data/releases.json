@@ -8,15 +8,26 @@
  },
  "labels": {
   "jp_status": {
-   "jp_official": "正規入荷あり・予定",
-   "jp_parallel": "並行品で流通",
-   "jp_route": "正規ルートあり（本品は未発表）",
-   "jp_none": "国内ルートなし",
-   "jp_unknown": "確認中"
+   "jp_official": "国内正規品あり",
+   "jp_route": "国内入荷の可能性あり",
+   "jp_parallel": "並行品あり",
+   "jp_unknown": "国内情報なし",
+   "jp_none": "国内流通なし"
+  },
+  "jp_help": {
+   "jp_official": "輸入元またはボトラーの発表で、日本への正規入荷（予定）を確認",
+   "jp_route": "このボトラーの正規品は日本で流通しているが、この商品の入荷はまだ発表されていない",
+   "jp_parallel": "国内の酒販店で並行輸入品の販売を確認",
+   "jp_unknown": "日本での流通をまだ確認できていない",
+   "jp_none": "日本での流通がないことを確認"
   },
   "buy_status": {
-   "buy_online": "海外通販で販売中",
-   "buy_unknown": "販売店未確認"
+   "buy_online": "海外通販あり",
+   "buy_unknown": "通販情報なし"
+  },
+  "buy_help": {
+   "buy_online": "ボトラー直販や海外の酒販店で販売を確認（日本への発送可否は各店で要確認）",
+   "buy_unknown": "販売している店を確認できていない、または完売"
   }
  },
  "archive_days": 90,
@@ -390,10 +401,11 @@
    "jp_status": "jp_unknown",
    "jp_note": "",
    "buy_status": "buy_online",
-   "buy_note": "G&M公式で予約受付中（記事時点）",
+   "buy_note": "G&M公式",
    "note": "60歳の記念向けとして発表。シングルカスク・カスクストレングス",
    "checked": "2026-10-25",
-   "name": "ロングモーン 1966"
+   "name": "ロングモーン 1966",
+   "name_en": "Longmorn 1966 Gordon & MacPhail Anniversary"
   },
   {
    "id": "gm-anniv-glengrant-1976",
@@ -420,10 +432,11 @@
    "jp_status": "jp_unknown",
    "jp_note": "",
    "buy_status": "buy_online",
-   "buy_note": "G&M公式で予約受付中（記事時点）",
+   "buy_note": "G&M公式",
    "note": "シングルカスク・カスクストレングス",
    "checked": "2026-10-25",
-   "name": "グレングラント 1976"
+   "name": "グレングラント 1976",
+   "name_en": "Glen Grant 1976 Gordon & MacPhail Anniversary"
   },
   {
    "id": "gm-anniv-miltonduff-1986",
@@ -450,10 +463,11 @@
    "jp_status": "jp_unknown",
    "jp_note": "",
    "buy_status": "buy_online",
-   "buy_note": "G&M公式で予約受付中（記事時点）",
+   "buy_note": "G&M公式",
    "note": "ルビー婚（40周年）向けとして発表",
    "checked": "2026-10-25",
-   "name": "ミルトンダフ 1986"
+   "name": "ミルトンダフ 1986",
+   "name_en": "Miltonduff 1986 Gordon & MacPhail Anniversary"
   },
   {
    "id": "gm-anniv-linkwood-1996",
@@ -480,10 +494,11 @@
    "jp_status": "jp_unknown",
    "jp_note": "",
    "buy_status": "buy_online",
-   "buy_note": "G&M公式で予約受付中（記事時点）",
+   "buy_note": "G&M公式",
    "note": "シングルカスク・カスクストレングス",
    "checked": "2026-10-25",
-   "name": "リンクウッド 1996"
+   "name": "リンクウッド 1996",
+   "name_en": "Linkwood 1996 Gordon & MacPhail Anniversary"
   },
   {
    "id": "gm-cc-heritage-talisker-1987",
@@ -510,7 +525,8 @@
    "buy_note": "",
    "note": "G&Mが持つタリスカー最後の1樽。旧ブラックラベルの復刻デザイン",
    "checked": "2026-10-25",
-   "name": "タリスカー 1987"
+   "name": "タリスカー 1987",
+   "name_en": "Talisker 1987 Connoisseurs Choice Heritage Gordon & MacPhail"
   },
   {
    "id": "dl-scallywag-winter-2026",
@@ -537,10 +553,11 @@
    "jp_status": "jp_unknown",
    "jp_note": "",
    "buy_status": "buy_unknown",
-   "buy_note": "海外の一部酒販店・通販で販売（記事時点）",
+   "buy_note": "",
    "note": "スペイサイドのブレンデッドモルト。ナチュラル・カスクストレングス",
    "checked": "2026-10-25",
-   "name": "スカリーワグ ウィンターエディション 2026"
+   "name": "スカリーワグ ウィンターエディション 2026",
+   "name_en": "Scallywag Winter Edition 2026 Douglas Laing"
   },
   {
    "id": "dl-bigpeat-winter-2026",
@@ -567,10 +584,11 @@
    "jp_status": "jp_unknown",
    "jp_note": "",
    "buy_status": "buy_unknown",
-   "buy_note": "海外の一部酒販店・通販で販売（記事時点）",
+   "buy_note": "",
    "note": "アイラのブレンデッドモルト",
    "checked": "2026-10-25",
-   "name": "ビッグピート 10年 ウィンターエディション 2026"
+   "name": "ビッグピート 10年 ウィンターエディション 2026",
+   "name_en": "Big Peat 10 Winter Edition 2026 Douglas Laing"
   },
   {
    "id": "cb-this-is-a-10yo",
@@ -595,12 +613,13 @@
    "source_name": "Wine Industry Advisor",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内正規ルートあり。本品は米国向けの発表",
+   "jp_note": "輸入元：スリーリバーズ。本品は米国向け",
    "buy_status": "buy_online",
-   "buy_note": "コンパスボックス米国公式通販（米国内向け）",
+   "buy_note": "コンパスボックス米国公式（米国内のみ）",
    "note": "クライヌリッシュ66.5%、アードナムルッカン33.5%。世界3,610本、うち米国600本",
    "checked": "2026-10-25",
-   "name": "ブレンデッドモルト 10年"
+   "name": "ブレンデッドモルト 10年",
+   "name_en": "This is a 10-Year-Old Whisky Compass Box Clynelish Ardnamurchan"
   },
   {
    "id": "tbwc-21yo-world-blend",
@@ -625,12 +644,13 @@
    "source_name": "The Whisky Wire",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内正規ルートあり（ウィスク・イー取扱）",
+   "jp_note": "輸入元：ウィスク・イー",
    "buy_status": "buy_online",
-   "buy_note": "Master of Malt（英国）で販売中（記事時点）",
+   "buy_note": "Master of Malt",
    "note": "複数の国の原酒をブレンド",
    "checked": "2026-10-25",
-   "name": "ワールドブレンド 21年"
+   "name": "ワールドブレンド 21年",
+   "name_en": "World Whisky Blend 21 Boutique-y"
   },
   {
    "id": "tbwc-bowmore-17",
@@ -655,12 +675,13 @@
    "source_name": "The Whisky Wire",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内正規ルートあり（ウィスク・イー取扱）",
+   "jp_note": "輸入元：ウィスク・イー",
    "buy_status": "buy_online",
-   "buy_note": "Master of Malt（英国）で販売中（記事時点）",
+   "buy_note": "Master of Malt",
    "note": "",
    "checked": "2026-10-25",
-   "name": "ボウモア 17年"
+   "name": "ボウモア 17年",
+   "name_en": "Bowmore 17 Boutique-y"
   },
   {
    "id": "tbwc-inchgower-12",
@@ -685,12 +706,13 @@
    "source_name": "The Whisky Wire",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内正規ルートあり（ウィスク・イー取扱）",
+   "jp_note": "輸入元：ウィスク・イー",
    "buy_status": "buy_online",
-   "buy_note": "Master of Malt（英国）で販売中（記事時点）",
+   "buy_note": "Master of Malt",
    "note": "",
    "checked": "2026-10-25",
-   "name": "インチガワー 12年"
+   "name": "インチガワー 12年",
+   "name_en": "Inchgower 12 Boutique-y"
   },
   {
    "id": "tbwc-inchgower-12-cs",
@@ -715,12 +737,13 @@
    "source_name": "The Whisky Wire",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内正規ルートあり（ウィスク・イー取扱）",
+   "jp_note": "輸入元：ウィスク・イー",
    "buy_status": "buy_online",
-   "buy_note": "Master of Malt（英国）で販売中（記事時点）",
+   "buy_note": "Master of Malt",
    "note": "",
    "checked": "2026-10-25",
-   "name": "インチガワー 12年 カスクストレングス"
+   "name": "インチガワー 12年 カスクストレングス",
+   "name_en": "Inchgower 12 Cask Strength Boutique-y"
   },
   {
    "id": "tbwc-clynelish-12",
@@ -745,12 +768,13 @@
    "source_name": "The Whisky Wire",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内正規ルートあり（ウィスク・イー取扱）",
+   "jp_note": "輸入元：ウィスク・イー",
    "buy_status": "buy_online",
-   "buy_note": "Master of Malt（英国）で販売中（記事時点）",
+   "buy_note": "Master of Malt",
    "note": "",
    "checked": "2026-10-25",
-   "name": "クライヌリッシュ 12年"
+   "name": "クライヌリッシュ 12年",
+   "name_en": "Clynelish 12 Boutique-y"
   },
   {
    "id": "tbwc-clynelish-12-cs",
@@ -775,12 +799,13 @@
    "source_name": "The Whisky Wire",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内正規ルートあり（ウィスク・イー取扱）",
+   "jp_note": "輸入元：ウィスク・イー",
    "buy_status": "buy_online",
-   "buy_note": "Master of Malt（英国）で販売中（記事時点）",
+   "buy_note": "Master of Malt",
    "note": "",
    "checked": "2026-10-25",
-   "name": "クライヌリッシュ 12年 カスクストレングス"
+   "name": "クライヌリッシュ 12年 カスクストレングス",
+   "name_en": "Clynelish 12 Cask Strength Boutique-y"
   },
   {
    "id": "tbwc-girvan-35",
@@ -805,12 +830,13 @@
    "source_name": "The Whisky Wire",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内正規ルートあり（ウィスク・イー取扱）",
+   "jp_note": "輸入元：ウィスク・イー",
    "buy_status": "buy_online",
-   "buy_note": "Master of Malt（英国）で販売中（記事時点）",
+   "buy_note": "Master of Malt",
    "note": "",
    "checked": "2026-10-25",
-   "name": "ガーヴァン 35年"
+   "name": "ガーヴァン 35年",
+   "name_en": "Girvan 35 Single Grain Boutique-y"
   },
   {
    "id": "milroys-vr-auchentoshan-1987-38",
@@ -835,12 +861,13 @@
    "source_name": "Milroy's of Soho 公式",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内で正規品の流通実績あり",
+   "jp_note": "",
    "buy_status": "buy_unknown",
-   "buy_note": "公式通販で完売",
-   "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
+   "buy_note": "公式は完売",
+   "note": "",
    "checked": "2026-10-25",
-   "name": "オーヘントッシャン 38年 1987"
+   "name": "オーヘントッシャン 38年 1987",
+   "name_en": "Auchentoshan 38 1987 Milroy's Vintage Reserve"
   },
   {
    "id": "milroys-vr-bowmore-2010-15",
@@ -865,12 +892,13 @@
    "source_name": "Milroy's of Soho 公式",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内で正規品の流通実績あり",
+   "jp_note": "",
    "buy_status": "buy_online",
-   "buy_note": "ミルロイズ公式通販",
-   "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
+   "buy_note": "ミルロイズ公式",
+   "note": "",
    "checked": "2026-10-25",
-   "name": "ボウモア 15年 2010"
+   "name": "ボウモア 15年 2010",
+   "name_en": "Bowmore 15 2010 Milroy's Vintage Reserve"
   },
   {
    "id": "milroys-vr-bowmore-2004-22",
@@ -895,12 +923,13 @@
    "source_name": "Milroy's of Soho 公式",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内で正規品の流通実績あり",
+   "jp_note": "",
    "buy_status": "buy_online",
-   "buy_note": "ミルロイズ公式通販",
-   "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
+   "buy_note": "ミルロイズ公式",
+   "note": "",
    "checked": "2026-10-25",
-   "name": "ボウモア 22年 2004"
+   "name": "ボウモア 22年 2004",
+   "name_en": "Bowmore 22 2004 Milroy's Vintage Reserve"
   },
   {
    "id": "milroys-vr-bowmore-2013-13",
@@ -925,12 +954,13 @@
    "source_name": "Milroy's of Soho 公式",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内で正規品の流通実績あり",
+   "jp_note": "",
    "buy_status": "buy_online",
-   "buy_note": "ミルロイズ公式通販",
-   "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
+   "buy_note": "ミルロイズ公式",
+   "note": "",
    "checked": "2026-10-25",
-   "name": "ボウモア 13年 2013"
+   "name": "ボウモア 13年 2013",
+   "name_en": "Bowmore 13 2013 Milroy's Vintage Reserve"
   },
   {
    "id": "milroys-vrb-ardmore-1978-47",
@@ -955,12 +985,13 @@
    "source_name": "Milroy's of Soho 公式",
    "collab": null,
    "jp_status": "jp_route",
-   "jp_note": "国内で正規品の流通実績あり",
+   "jp_note": "",
    "buy_status": "buy_unknown",
-   "buy_note": "公式通販で完売",
-   "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
+   "buy_note": "公式は完売",
+   "note": "",
    "checked": "2026-10-25",
-   "name": "アードモア 47年 1978"
+   "name": "アードモア 47年 1978",
+   "name_en": "Ardmore 47 1978 Milroy's Vintage Reserve Black"
   }
  ]
 }
