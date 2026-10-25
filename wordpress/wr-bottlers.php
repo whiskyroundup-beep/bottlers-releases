@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.5.0
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.5.1
  * 使い方：プラグインとして有効化 → 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -11,6 +11,9 @@ if ( ! defined( 'WR_BOTTLERS_JSON' ) ) {
 }
 
 function wr_bottlers_get_data() {
+	if ( isset( $_GET['wrb_refresh'] ) && current_user_can( 'manage_options' ) ) {
+		delete_transient( 'wr_bottlers_data_v4' );
+	}
 	$cache = get_transient( 'wr_bottlers_data_v4' );
 	if ( $cache !== false ) {
 		return $cache;
@@ -195,9 +198,9 @@ function wr_bottlers_shortcode() {
 .wrb-judge em{font-style:normal;color:var(--sub)}
 .wrb-go{font-size:12px;color:var(--brand);font-weight:700;text-align:right;margin-top:8px}
 .wrb-sec{margin:36px 0 0}
-#wrb h2.wrb-h2,#wrb h3.wrb-nm,#wrb h3.wrb-q{all:unset;box-sizing:border-box}
+#wrb h2.wrb-h2,#wrb h3.wrb-nm,#wrb h3.wrb-q{all:unset;box-sizing:border-box;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important;position:static!important;text-align:left!important}
 #wrb h2.wrb-h2::before,#wrb h2.wrb-h2::after,#wrb h3.wrb-nm::before,#wrb h3.wrb-nm::after,#wrb h3.wrb-q::before,#wrb h3.wrb-q::after{content:none!important;display:none!important}
-#wrb h2.wrb-h2{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:700;color:var(--ink);line-height:1.4;margin:0 0 12px;padding:0 0 8px;border-bottom:2px solid var(--brand)}
+#wrb h2.wrb-h2{display:flex!important;align-items:center;gap:10px;font-size:19px!important;font-weight:700!important;color:var(--ink)!important;line-height:1.4!important;margin:0 0 12px!important;padding:0 0 8px!important;border-bottom:2px solid var(--brand)!important}
 #wrb h2.wrb-h2 small{font-size:12px;font-weight:400;color:var(--sub)}
 .wrb-sec-lead{font-size:13px!important;color:var(--sub);margin:0 0 12px!important;line-height:1.7!important}
 .wrb-bl{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px;margin:0!important;padding:0!important;list-style:none!important}
@@ -215,9 +218,9 @@ function wr_bottlers_shortcode() {
 .wrb-faq summary::-webkit-details-marker{display:none}
 .wrb-faq summary::after{content:"＋";color:var(--brand);flex:none}
 .wrb-faq details[open] summary::after{content:"－"}
-#wrb h3.wrb-nm{display:block;font-weight:700;line-height:1.25;letter-spacing:.02em;font-size:24px;color:#fff;word-break:keep-all;overflow-wrap:anywhere}
-#wrb h3.wrb-nm.is-m{font-size:20px}#wrb h3.wrb-nm.is-l{font-size:17px}
-#wrb h3.wrb-q{font-size:14px;font-weight:700;color:var(--ink);line-height:1.5}
+#wrb h3.wrb-nm{display:block!important;font-weight:700!important;line-height:1.25!important;letter-spacing:.02em;font-size:24px!important;color:#fff!important;word-break:keep-all;overflow-wrap:anywhere}
+#wrb h3.wrb-nm.is-m{font-size:20px!important}#wrb h3.wrb-nm.is-l{font-size:17px!important}
+#wrb h3.wrb-q{display:block!important;font-size:14px!important;font-weight:700!important;color:var(--ink)!important;line-height:1.5!important}
 #wrb .wrb-faq .a{padding:0 14px 14px;font-size:14px!important;line-height:1.8!important;color:var(--ink);margin:0!important}
 .wrb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wrb-empty{padding:40px;text-align:center;color:var(--sub)}
@@ -286,7 +289,7 @@ function wr_bottlers_shortcode() {
 		</div>
 </div>
 
-<h2 class="wrb-h2" id="wrb-list">最新リリース一覧</h2>
+<h2 class="wrb-h2 st-css-no st-css-no2" id="wrb-list">最新リリース一覧</h2>
 <div class="wrb-result" aria-live="polite"><span><b class="wrb-n"><?php echo count( $active ); ?></b> 件を表示中</span><button type="button" class="wrb-reset" hidden>条件をリセット</button></div>
 
 <div class="wrb-list">
@@ -315,7 +318,7 @@ function wr_bottlers_shortcode() {
 		<div class="wrb-media" style="--tc:<?php echo esc_attr( wr_bottlers_region_color( $x['region'] ) ); ?>">
 			<span class="wrb-rg"><?php echo esc_html( $rg ); ?></span>
 			<?php if ( $x['_archived'] ) : ?><span class="wrb-flag is-arch">90日以上前</span><?php elseif ( $x['_new'] ) : ?><span class="wrb-flag">NEW</span><?php endif; ?>
-			<div class="wrb-cap"><h3 class="wrb-nm<?php echo $tsize; ?>"><?php echo esc_html( $title ); ?></h3><span class="wrb-by"><?php echo esc_html( $x['_bottler'] ); ?></span></div>
+			<div class="wrb-cap"><h3 class="wrb-nm st-css-no st-css-no2<?php echo $tsize; ?>"><?php echo esc_html( $title ); ?></h3><span class="wrb-by"><?php echo esc_html( $x['_bottler'] ); ?></span></div>
 		</div>
 		<div class="wrb-body">
 			<div class="wrb-meta"><span><?php echo esc_html( $x['series'] ? $x['series'] : '' ); ?></span><span><?php echo esc_html( $date ); ?></span></div>
@@ -337,7 +340,7 @@ function wr_bottlers_shortcode() {
 <?php if ( $archived ) : ?><button type="button" class="wrb-archbtn" aria-pressed="false">90日以上前のリリースも見る（<?php echo $archived; ?>件）</button><?php endif; ?>
 
 <section class="wrb-sec" aria-labelledby="wrb-bl-h">
-	<h2 class="wrb-h2" id="wrb-bl-h">掲載しているボトラー<small><?php echo $n_all; ?>社</small></h2>
+	<h2 class="wrb-h2 st-css-no st-css-no2" id="wrb-bl-h">掲載しているボトラー<small><?php echo $n_all; ?>社</small></h2>
 	<p class="wrb-sec-lead">以下のボトラーの公式発表を毎週チェックしています。名前を押すと、そのボトラーのリリースだけを表示します。</p>
 	<ul class="wrb-bl">
 	<?php
@@ -358,7 +361,7 @@ function wr_bottlers_shortcode() {
 </section>
 
 <section class="wrb-sec" aria-labelledby="wrb-faq-h">
-	<h2 class="wrb-h2" id="wrb-faq-h">よくある質問</h2>
+	<h2 class="wrb-h2 st-css-no st-css-no2" id="wrb-faq-h">よくある質問</h2>
 	<div class="wrb-faq">
 	<?php
 	$faq = array(
@@ -369,7 +372,7 @@ function wr_bottlers_shortcode() {
 		array( 'どのくらいの頻度で更新されますか？', '毎週月曜日に更新しています。発表から' . $days . '日を過ぎたリリースは、一覧の下の「' . $days . '日以上前のリリース」にまとめています。' ),
 	);
 	foreach ( $faq as $f ) : ?>
-		<details><summary><h3 class="wrb-q"><?php echo esc_html( $f[0] ); ?></h3></summary><p class="a"><?php echo esc_html( $f[1] ); ?></p></details>
+		<details><summary><h3 class="wrb-q st-css-no st-css-no2"><?php echo esc_html( $f[0] ); ?></h3></summary><p class="a"><?php echo esc_html( $f[1] ); ?></p></details>
 	<?php endforeach; ?>
 	</div>
 </section>
