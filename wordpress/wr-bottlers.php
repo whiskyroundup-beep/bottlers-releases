@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.6.0
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.7.0
  * 使い方：プラグインとして有効化 → 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -10,9 +10,16 @@ if ( ! defined( 'WR_BOTTLERS_JSON' ) ) {
 	define( 'WR_BOTTLERS_JSON', 'https://raw.githubusercontent.com/whiskyroundup-beep/bottlers-releases/main/data/releases.json' );
 }
 
+// ページがキャッシュから配信されていても、1時間ごとにデータを取りに行く
+add_action( 'wr_bottlers_hourly', 'wr_bottlers_get_data' );
+add_action( 'init', function () {
+	if ( ! wp_next_scheduled( 'wr_bottlers_hourly' ) ) wp_schedule_event( time() + 300, 'hourly', 'wr_bottlers_hourly' );
+} );
+
 function wr_bottlers_get_data() {
 	if ( isset( $_GET['wrb_refresh'] ) && current_user_can( 'manage_options' ) ) {
 		delete_transient( 'wr_bottlers_data_v4' );
+		delete_option( 'wr_bottlers_synced' );
 	}
 	$cache = get_transient( 'wr_bottlers_data_v4' );
 	if ( $cache !== false ) {
@@ -49,6 +56,22 @@ function wr_bottlers_sync_modified( $data ) {
 		clean_post_cache( $id );
 	}
 	update_option( 'wr_bottlers_synced', $data['updated'], false );
+	wr_bottlers_purge_page_cache( $ids );
+}
+
+// ページキャッシュ（WP Fastest Cache のPC用・スマホ用など）を消して、更新をすぐ反映させる
+function wr_bottlers_purge_page_cache( $ids = null ) {
+	if ( null === $ids ) {
+		global $wpdb;
+		$ids = $wpdb->get_col( "SELECT ID FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type = 'page' AND post_content LIKE '%[bottlers_list%'" );
+	}
+	foreach ( (array) $ids as $id ) {
+		if ( function_exists( 'wpfc_clear_post_cache_by_id' ) ) wpfc_clear_post_cache_by_id( $id );
+		do_action( 'litespeed_purge_post', $id );
+	}
+	if ( ! function_exists( 'wpfc_clear_post_cache_by_id' ) && isset( $GLOBALS['wp_fastest_cache'] ) && method_exists( $GLOBALS['wp_fastest_cache'], 'deleteCache' ) ) {
+		$GLOBALS['wp_fastest_cache']->deleteCache( false );
+	}
 }
 
 function wr_bottlers_fmt_date( $d ) {
