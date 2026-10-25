@@ -1,8 +1,8 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.2.1
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.3.0
  * 使い方：プラグインとして有効化（またはCode Snippetsに「PHP」タイプで貼り付け）→ 固定ページに [bottlers_list]
- * データ：GitHub の data/releases.json（毎週自動更新）を6時間キャッシュ
+ * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
  */
 
@@ -11,7 +11,7 @@ if ( ! defined( 'WR_BOTTLERS_JSON' ) ) {
 }
 
 function wr_bottlers_get_data() {
-	$cache = get_transient( 'wr_bottlers_data_v2' );
+	$cache = get_transient( 'wr_bottlers_data_v3' );
 	if ( $cache !== false ) {
 		return $cache;
 	}
@@ -21,11 +21,11 @@ function wr_bottlers_get_data() {
 		$data = json_decode( wp_remote_retrieve_body( $res ), true );
 	}
 	if ( ! is_array( $data ) || ! isset( $data['releases'] ) ) {
-		$backup = get_option( 'wr_bottlers_backup_v2' );
+		$backup = get_option( 'wr_bottlers_backup_v3' );
 		return $backup ? $backup : null;
 	}
-	set_transient( 'wr_bottlers_data_v2', $data, 6 * HOUR_IN_SECONDS );
-	update_option( 'wr_bottlers_backup_v2', $data, false );
+	set_transient( 'wr_bottlers_data_v3', $data, HOUR_IN_SECONDS );
+	update_option( 'wr_bottlers_backup_v3', $data, false );
 	return $data;
 }
 
@@ -114,22 +114,17 @@ function wr_bottlers_shortcode() {
 .wrb-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .15s,box-shadow .15s}
 .wrb-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(35,23,16,.10)}
 .wrb-card.is-arch{opacity:.75}
-.wrb-media{position:relative;aspect-ratio:4/3;background:var(--soft);overflow:hidden}
-.wrb-media img{width:100%;height:100%;object-fit:cover;display:block}
+.wrb-media{position:relative;aspect-ratio:16/10;background:var(--soft);overflow:hidden}
 .wrb-tile{position:absolute;inset:0;background:linear-gradient(160deg,var(--tc) 0%,#1a110b 100%)}
 .wrb-tile::before{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;border:1px solid rgba(255,255,255,.18)}
-.wrb-media.has-img .wrb-tile{display:none}.wrb-media.is-fallback .wrb-tile{display:block}
-.wrb-cap{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;color:#fff;background:linear-gradient(to top,rgba(20,12,8,.88) 0%,rgba(20,12,8,.55) 55%,rgba(20,12,8,0) 100%)}
-.wrb-media.is-fallback .wrb-cap,.wrb-media:not(.has-img) .wrb-cap{background:none}
+.wrb-cap{position:absolute;left:0;right:0;bottom:0;padding:16px;color:#fff}
 .wrb-cap .wrb-nm{display:block;font-weight:700;line-height:1.25;letter-spacing:.02em;font-size:24px;word-break:keep-all;overflow-wrap:anywhere;text-shadow:0 1px 2px rgba(0,0,0,.35)}
 .wrb-cap .wrb-nm.is-m{font-size:20px}.wrb-cap .wrb-nm.is-l{font-size:17px}
 .wrb-cap .wrb-by{display:block;font-size:12px;opacity:.85;margin-top:4px}
-.wrb-credit{position:absolute;left:8px;top:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.55);padding:2px 7px;border-radius:4px;max-width:calc(100% - 80px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.wrb-media.is-fallback .wrb-credit{display:none}
 .wrb-flag{position:absolute;right:8px;top:8px;font-size:11px;font-weight:700;color:#fff;background:var(--brand);padding:2px 8px;border-radius:999px}
 .wrb-flag.is-arch{background:#6b6b6b}
 .wrb-body{display:flex;flex-direction:column;gap:6px;padding:14px 14px 12px;flex:1}
-.wrb-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--sub);letter-spacing:.02em}.wrb-meta span:first-child{color:var(--brand);font-weight:700}
+.wrb-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--sub);letter-spacing:.02em}.wrb-meta span:first-child{color:var(--brand);font-weight:700}.wrb-meta span:last-child{white-space:nowrap}
 .wrb-meta b{color:var(--brand);font-weight:700}
 .wrb-series{font-size:13px;color:var(--ink);font-weight:700}
 .wrb-keys{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink)}
@@ -149,8 +144,9 @@ function wr_bottlers_shortcode() {
 .wrb-empty{padding:40px;text-align:center;color:var(--sub)}
 .wrb-small{font-size:12px;color:var(--sub);margin-top:24px;padding-top:14px;border-top:1px solid var(--line)}
 .wrb-small p{margin:0 0 6px}
+.wrb-lg{display:inline-flex;align-items:center;gap:4px;margin:0 10px 0 4px;white-space:nowrap}.wrb-lg::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--tc)}
 @media (max-width:900px){.wrb-list{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.wrb-list{grid-template-columns:1fr}.wrb-media{aspect-ratio:16/9}.wrb-filters{grid-template-columns:1fr 1fr}.wrb-filters .wrb-q{grid-column:1/-1}.wrb-hero .u{margin-left:0;width:100%}.wrb-hero .v{font-size:22px}}
+@media (max-width:600px){.wrb-list{grid-template-columns:1fr}.wrb-media{aspect-ratio:2/1}.wrb-filters{grid-template-columns:1fr 1fr}.wrb-filters .wrb-q{grid-column:1/-1}.wrb-hero .u{margin-left:0;width:100%}.wrb-hero .v{font-size:22px}}
 </style>
 
 <div class="wrb-hero">
@@ -184,7 +180,7 @@ function wr_bottlers_shortcode() {
 	if ( ! empty( $x['name'] ) ) {
 		$title = $x['name'];
 	} else {
-		$title = $x['distillery'];
+		$title = trim( preg_replace( '/[（(].*?[）)]/u', '', $x['distillery'] ) );
 		if ( $x['age'] ) $title .= ' ' . $x['age'] . '年';
 		if ( $x['vintage'] ) $title .= ' ' . $x['vintage'];
 	}
@@ -200,11 +196,9 @@ function wr_bottlers_shortcode() {
 	$date   = $x['announced'] ? wr_bottlers_fmt_date( $x['announced'] ) . ' 発表' : wr_bottlers_fmt_date( $x['first_seen'] ) . ' 掲載';
 	$search = mb_strtolower( implode( ' ', array( $title, $x['_bottler'], $x['series'], $x['distillery'], $x['region'], $x['cask'], $x['note'] ) ) );
 	$price  = wr_bottlers_price( $x['price'], $fx );
-	$img    = isset( $x['image_url'] ) ? $x['image_url'] : '';
 	?>
 	<a class="wrb-card<?php echo $x['_archived'] ? ' is-arch' : ''; ?>" href="<?php echo esc_url( $x['source_url'] ); ?>" target="_blank" rel="noopener nofollow" data-jp="<?php echo esc_attr( $x['jp_status'] ); ?>" data-buy="<?php echo esc_attr( $x['buy_status'] ); ?>" data-b="<?php echo esc_attr( $x['_bottler'] ); ?>" data-r="<?php echo esc_attr( $x['region'] ); ?>" data-arch="<?php echo $x['_archived'] ? '1' : '0'; ?>" data-s="<?php echo esc_attr( $search ); ?>"<?php echo $x['_archived'] ? ' hidden' : ''; ?>>
-		<div class="wrb-media<?php echo $img ? ' has-img' : ''; ?>">
-			<?php if ( $img ) : ?><img src="<?php echo esc_url( $img ); ?>" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback');this.remove();"><span class="wrb-credit">画像：<?php echo esc_html( $x['source_name'] ); ?><?php echo ( isset( $x['image_scope'] ) && $x['image_scope'] === 'series' ) ? '（シリーズ画像）' : ''; ?></span><?php endif; ?>
+		<div class="wrb-media">
 			<div class="wrb-tile" style="--tc:<?php echo esc_attr( wr_bottlers_region_color( $x['region'] ) ); ?>"></div>
 			<div class="wrb-cap"><span class="wrb-nm<?php echo $tsize; ?>"><?php echo esc_html( $title ); ?></span><span class="wrb-by"><?php echo esc_html( $x['_bottler'] ); ?></span></div>
 			<?php if ( $x['_archived'] ) : ?><span class="wrb-flag is-arch">アーカイブ</span><?php elseif ( ( strtotime( $today ) - strtotime( $x['_base'] ) ) / 86400 <= 14 ) : ?><span class="wrb-flag">NEW</span><?php endif; ?>
@@ -229,7 +223,7 @@ function wr_bottlers_shortcode() {
 
 <div class="wrb-small">
 	<p>世界のインディペンデントボトラーが公式に発表したリリースを、輸入元や販売店に偏らず掲載しています。蒸留所のオフィシャル、酒販店・バー・イベント向けの限定ボトルは掲載していません。カードを押すと元記事が開きます。</p>
-	<p>画像は元記事が共有用に公開している画像（OGP）を表示しており、権利は各権利者に帰属します。シリーズ全体の画像の場合があります。</p>
+	<p>カード上部の色は地域を表しています：<?php foreach ( array( 'アイラ', 'スペイサイド', 'ハイランド', 'アイランズ', 'ローランド', 'キャンベルタウン', 'グレーン' ) as $rg ) : ?><span class="wrb-lg" style="--tc:<?php echo esc_attr( wr_bottlers_region_color( $rg ) ); ?>"><?php echo esc_html( $rg ); ?></span><?php endforeach; ?><span class="wrb-lg" style="--tc:#630000">その他</span></p>
 	<p>価格はボトラーの公式価格です。円換算は<?php echo esc_html( wr_bottlers_fmt_date( isset( $fx['date'] ) ? $fx['date'] : '' ) ); ?>時点のレートによる目安で、送料・関税・酒税・消費税は含みません。「海外通販で販売中」は販売を確認したもので、日本への発送可否は各店でご確認ください。</p>
 	<?php if ( $tier_b ) : ?><p>次のボトラーは公式発表が限られるため、一部のリリースのみ掲載しています：<?php echo esc_html( implode( '、', $tier_b ) ); ?></p><?php endif; ?>
 	<p>20歳未満の飲酒は法律で禁止されています。</p>
