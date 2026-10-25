@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.4.1
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.4.2
  * 使い方：プラグインとして有効化 → 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -127,8 +127,9 @@ function wr_bottlers_shortcode() {
 .wrb-tab[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
 .wrb-tab[aria-pressed="true"] .c{color:var(--rose)}
 .wrb-more{display:none}
-.wrb-filters{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:8px}
-.wrb-filters select,.wrb-filters input[type=search]{width:100%;height:42px;border:1px solid var(--line);border-radius:8px;padding:0 10px;font-size:14px;background:var(--card);color:var(--ink);margin:0}
+.wrb-filters{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.wrb-qw{margin:0 0 8px}
+.wrb-filters select,.wrb-qw input[type=search]{width:100%;height:42px;border:1px solid var(--line);border-radius:8px;padding:0 10px;font-size:14px;background:var(--card);color:var(--ink);margin:0}
 .wrb-result{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--sub);padding:10px 0;border-top:1px solid var(--line);margin:0 0 12px}
 .wrb-result b{color:var(--ink);font-size:15px}
 .wrb-reset{border:0;background:none;color:var(--brand);font-size:13px;cursor:pointer;padding:0;text-decoration:underline}
@@ -165,6 +166,7 @@ function wr_bottlers_shortcode() {
 .wrb-dot.buy_online{background:#2f6f86}
 .wrb-judge em{font-style:normal;color:var(--sub)}
 .wrb-go{font-size:12px;color:var(--brand);font-weight:700;text-align:right;margin-top:8px}
+.wrb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wrb-empty{padding:40px;text-align:center;color:var(--sub)}
 .wrb-archbtn{display:block;margin:18px auto 0;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 18px;font-size:13px;cursor:pointer}
 .wrb-archbtn[aria-pressed="true"]{background:var(--soft)}
@@ -176,7 +178,7 @@ function wr_bottlers_shortcode() {
 .wrb-hero .u{margin-left:0;width:100%}.wrb-hero .v{font-size:22px}
 .wrb-more{display:flex;width:100%;justify-content:center;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:8px;height:42px;align-items:center;font-size:14px;color:var(--ink);cursor:pointer}
 .wrb-adv{display:none;margin-top:8px}.wrb-adv.is-open{display:block}
-.wrb-filters{grid-template-columns:1fr 1fr}.wrb-filters .wrb-q{grid-column:1/-1}
+.wrb-filters{grid-template-columns:1fr 1fr}.wrb-filters .wrb-s{grid-column:1/-1}
 }
 </style>
 
@@ -212,10 +214,10 @@ function wr_bottlers_shortcode() {
 		<span class="lbl">海外通販</span>
 		<button type="button" class="wrb-tab wrb-buy" aria-pressed="false"><span class="wrb-dot buy_online"></span>海外通販ありだけ表示<span class="c"><?php echo count( array_filter( $active, function ( $x ) { return $x['buy_status'] === 'buy_online'; } ) ); ?></span></button>
 	</div>
-	<button type="button" class="wrb-more" aria-expanded="false">検索・絞り込み・並び替え <span aria-hidden="true">▾</span></button>
+	<div class="wrb-qw"><input type="search" class="wrb-q" placeholder="蒸留所・ボトラー名で検索（英語も可）" aria-label="キーワード検索"></div>
+	<button type="button" class="wrb-more" aria-expanded="false">絞り込み・並び替え <span aria-hidden="true">▾</span></button>
 	<div class="wrb-adv">
 		<div class="wrb-filters">
-			<input type="search" class="wrb-q" placeholder="蒸留所・ボトラー名（英語も可）" aria-label="キーワード検索">
 			<select class="wrb-b" aria-label="ボトラーで絞り込む"><option value="">すべてのボトラー</option>
 			<?php foreach ( $bottlers as $b ) : ?><option><?php echo esc_html( $b ); ?></option><?php endforeach; ?></select>
 			<select class="wrb-r" aria-label="地域で絞り込む"><option value="">すべての地域</option>
@@ -248,7 +250,7 @@ function wr_bottlers_shortcode() {
 	$price  = wr_bottlers_price( $x['price'], $fx );
 	$rg     = $x['region'] ? $x['region'] : 'その他';
 	?>
-	<a class="wrb-card<?php echo $x['_archived'] ? ' is-arch' : ''; ?>" href="<?php echo esc_url( $x['source_url'] ); ?>" target="_blank" rel="noopener nofollow" aria-label="<?php echo esc_attr( $title . '（' . $x['_bottler'] . '）の元記事を新しいタブで開く' ); ?>" data-i="<?php echo $i++; ?>" data-p="<?php echo $price && $price[2] ? round( $price[2], 2 ) : ''; ?>" data-jp="<?php echo esc_attr( $x['jp_status'] ); ?>" data-buy="<?php echo esc_attr( $x['buy_status'] ); ?>" data-b="<?php echo esc_attr( $x['_bottler'] ); ?>" data-r="<?php echo esc_attr( $x['region'] ); ?>" data-arch="<?php echo $x['_archived'] ? '1' : '0'; ?>" data-s="<?php echo esc_attr( $search ); ?>"<?php echo $x['_archived'] ? ' hidden' : ''; ?>>
+	<a class="wrb-card<?php echo $x['_archived'] ? ' is-arch' : ''; ?>" href="<?php echo esc_url( $x['source_url'] ); ?>" target="_blank" rel="noopener nofollow" data-i="<?php echo $i++; ?>" data-p="<?php echo $price && $price[2] ? round( $price[2], 2 ) : ''; ?>" data-jp="<?php echo esc_attr( $x['jp_status'] ); ?>" data-buy="<?php echo esc_attr( $x['buy_status'] ); ?>" data-b="<?php echo esc_attr( $x['_bottler'] ); ?>" data-r="<?php echo esc_attr( $x['region'] ); ?>" data-arch="<?php echo $x['_archived'] ? '1' : '0'; ?>" data-s="<?php echo esc_attr( $search ); ?>"<?php echo $x['_archived'] ? ' hidden' : ''; ?>>
 		<div class="wrb-media" style="--tc:<?php echo esc_attr( wr_bottlers_region_color( $x['region'] ) ); ?>">
 			<span class="wrb-rg"><?php echo esc_html( $rg ); ?></span>
 			<?php if ( $x['_archived'] ) : ?><span class="wrb-flag is-arch">90日以上前</span><?php elseif ( $x['_new'] ) : ?><span class="wrb-flag">NEW</span><?php endif; ?>
@@ -258,14 +260,14 @@ function wr_bottlers_shortcode() {
 			<div class="wrb-meta"><span><?php echo esc_html( $x['series'] ? $x['series'] : '' ); ?></span><span><?php echo esc_html( $date ); ?></span></div>
 			<?php if ( $keys ) : ?><div class="wrb-keys"><?php foreach ( $keys as $k ) : ?><span><?php echo esc_html( $k ); ?></span><?php endforeach; ?></div><?php endif; ?>
 			<?php if ( $detail ) : ?><div class="wrb-cask"><?php echo esc_html( $detail ); ?></div><?php endif; ?>
-			<?php if ( $price ) : ?><div class="wrb-price"><b><?php echo esc_html( $price[0] ); ?></b><?php if ( $price[1] ) : ?><small><?php echo esc_html( $price[1] ); ?></small><?php endif; ?></div>
+			<?php if ( $price ) : ?><div class="wrb-price"><b><?php echo esc_html( $price[0] ); ?></b><?php if ( $price[1] ) : ?><small><?php echo esc_html( $price[1] ); ?>・税送料別</small><?php endif; ?></div>
 			<?php else : ?><div class="wrb-price is-na"><b>公式価格は未発表</b></div><?php endif; ?>
 			<?php if ( ! empty( $x['jp_price'] ) ) : ?><div class="wrb-cask">国内公式価格 ¥<?php echo number_format( $x['jp_price'] ); ?>（税込）</div><?php endif; ?>
 			<div class="wrb-judge">
-				<div><span class="wrb-chip"><span class="wrb-dot <?php echo esc_attr( $x['jp_status'] ); ?>"></span><?php echo esc_html( $L['jp_status'][ $x['jp_status'] ] ); ?></span><?php if ( $x['jp_note'] ) : ?><em><?php echo esc_html( $x['jp_note'] ); ?></em><?php endif; ?></div>
-				<div><span class="wrb-chip"><span class="wrb-dot <?php echo esc_attr( $x['buy_status'] ); ?>"></span><?php echo esc_html( $L['buy_status'][ $x['buy_status'] ] ); ?></span><?php if ( $x['buy_note'] ) : ?><em><?php echo esc_html( $x['buy_note'] ); ?></em><?php endif; ?></div>
+				<div><span class="wrb-chip" title="<?php echo esc_attr( $L['jp_help'][ $x['jp_status'] ] ); ?>"><span class="wrb-dot <?php echo esc_attr( $x['jp_status'] ); ?>"></span><?php echo esc_html( $L['jp_status'][ $x['jp_status'] ] ); ?></span><?php if ( $x['jp_note'] ) : ?><em><?php echo esc_html( $x['jp_note'] ); ?></em><?php endif; ?></div>
+				<div><span class="wrb-chip" title="<?php echo esc_attr( $L['buy_help'][ $x['buy_status'] ] ); ?>"><span class="wrb-dot <?php echo esc_attr( $x['buy_status'] ); ?>"></span><?php echo esc_html( $L['buy_status'][ $x['buy_status'] ] ); ?></span><?php if ( $x['buy_note'] ) : ?><em><?php echo esc_html( $x['buy_note'] ); ?></em><?php endif; ?></div>
 			</div>
-			<div class="wrb-go">元記事を開く（<?php echo esc_html( $x['source_name'] ); ?>）↗</div>
+			<div class="wrb-go">元記事を開く（<?php echo esc_html( $x['source_name'] ); ?>）↗<span class="wrb-sr">新しいタブで開きます</span></div>
 		</div>
 	</a>
 <?php endforeach; ?>
