@@ -1076,7 +1076,7 @@
    "id": "cadenhead-auth-ardnamurchan-8",
    "bottler_id": "cadenhead",
    "series": "オーセンティック・コレクション",
-   "distillery": "アードナマッカン",
+   "distillery": "アードナムルッカン",
    "region": "ハイランド",
    "vintage": "2018",
    "age": 8,
@@ -1100,7 +1100,7 @@
    "buy_note": "",
    "note": "ケイデンヘッド直営ショップ向け",
    "checked": "2026-10-25",
-   "name": "アードナマッカン 8年 2018",
+   "name": "アードナムルッカン 8年 2018",
    "name_en": "Ardnamurchan 8 2018 Authentic Collection Cadenhead's"
   },
   {
@@ -1281,7 +1281,7 @@
    "id": "gm-vm-glentauchers-1995",
    "bottler_id": "gm",
    "series": "ヴィンテージ・モーメンツ",
-   "distillery": "グレントファース",
+   "distillery": "グレントファーズ",
    "region": "スペイサイド",
    "vintage": "1995",
    "age": null,
@@ -1302,7 +1302,7 @@
    "buy_note": "",
    "note": "5本組セットの1本",
    "checked": "2026-10-25",
-   "name": "グレントファース 1995",
+   "name": "グレントファーズ 1995",
    "name_en": "Glentauchers 1995 Vintage Moments Gordon & MacPhail"
   },
   {
@@ -1937,7 +1937,7 @@
    "id": "thompson-braeval12",
    "bottler_id": "thompson",
    "series": "",
-   "distillery": "ブラーヴァル",
+   "distillery": "ブレイヴァル",
    "region": "スペイサイド",
    "vintage": "2014",
    "age": 12,
@@ -1961,7 +1961,7 @@
    "buy_note": "Thompson Bros公式",
    "note": "",
    "checked": "2026-10-25",
-   "name": "ブラーヴァル 12年 2014",
+   "name": "ブレイヴァル 12年 2014",
    "name_en": "Braeval 12 2014 Thompson Bros"
   },
   {
@@ -3615,7 +3615,7 @@
   {
    "id": "archives-tomatin-1994",
    "bottler_id": "archives",
-   "series": "フィッシュ・オブ・サモア",
+   "series": "フィッシーズ・オブ・サモア",
    "distillery": "トマーティン",
    "region": "ハイランド",
    "vintage": "1994",
