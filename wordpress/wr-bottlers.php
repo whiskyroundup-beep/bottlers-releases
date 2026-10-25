@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.4.2
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.4.3
  * 使い方：プラグインとして有効化 → 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -101,7 +101,12 @@ function wr_bottlers_shortcode() {
 .wrb *{box-sizing:border-box}.wrb [hidden]{display:none!important}
 .wrb a,.wrb a:hover{text-decoration:none;color:inherit;box-shadow:none}
 .wrb p{margin:0}
-.wrb-lead{font-size:15px;margin:0 0 14px!important;color:var(--ink)}
+.wrb-intro{margin:0 0 16px;display:grid;gap:8px}
+.wrb-catch{font-size:20px;font-weight:700;color:var(--brand);line-height:1.4;word-break:keep-all;overflow-wrap:anywhere}
+.wrb-notes{margin:4px 0 0!important;padding:0!important;list-style:none!important;display:grid;gap:2px;font-size:12px;color:var(--sub)}
+.wrb-notes li{margin:0!important;padding:0 0 0 1.1em!important;position:relative;border:0!important;background:none!important}
+.wrb-notes li::before{content:"※";position:absolute;left:0;top:0;background:none!important;width:auto!important;height:auto!important;border:0!important}
+.wrb .wrb-notes a{color:var(--brand);text-decoration:underline}
 .wrb-hero{background:var(--brand);color:#fff;border-radius:14px;padding:16px 20px;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:10px 28px;align-items:flex-end}
 .wrb-hero .k{font-size:12px;color:var(--rose)}
 .wrb-hero .v{font-size:26px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}
@@ -182,7 +187,15 @@ function wr_bottlers_shortcode() {
 }
 </style>
 
-<p class="wrb-lead">世界中のインディペンデントボトラーが<strong>公式に発表した新作</strong>を、日本語でまとめています。日本で手に入るか、海外通販で買えるかもひと目で分かります。</p>
+<div class="wrb-intro">
+	<p class="wrb-catch">世界のボトラーズ新作情報、<wbr>毎週月曜日に更新！</p>
+	<p>「気になっていたボトラーの新作、いつの間にか出ていた」。そんな見逃しを少しでも減らしたくて、このページを作りました。</p>
+	<p>著名なボトラー<?php echo $n_all; ?>社のリリースについて国内外の情報を取りまとめ、日本で買えるか、海外通販で買えるかまで、できる限り調べて載せています。国内入荷を待つか、海外から取り寄せるか。迷ったときの判断材料にしてもらえたらうれしいです！</p>
+	<ul class="wrb-notes">
+		<li>掲載はボトラーの公式発表をもとにしています。特定の輸入元や販売店に偏らない、中立な一覧を目指しています。</li>
+		<li>掲載するボトラーや情報の集め方は、今後も改善していく予定です。ご意見は<a href="https://www.instagram.com/whisky_roundup/" target="_blank" rel="noopener">InstagramのDM</a>からお気軽にどうぞ！</li>
+	</ul>
+</div>
 
 <div class="wrb-hero">
 	<div><div class="k">掲載中のリリース</div><div class="v"><?php echo count( $active ); ?><small>件</small></div></div>
