@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.2
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.2.1
  * 使い方：プラグインとして有効化（またはCode Snippetsに「PHP」タイプで貼り付け）→ 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を6時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -116,20 +116,22 @@ function wr_bottlers_shortcode() {
 .wrb-card.is-arch{opacity:.75}
 .wrb-media{position:relative;aspect-ratio:4/3;background:var(--soft);overflow:hidden}
 .wrb-media img{width:100%;height:100%;object-fit:cover;display:block}
-.wrb-tile{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:#fff;background:linear-gradient(160deg,var(--tc) 0%,#1a110b 100%)}
-.wrb-tile b{font-size:22px;line-height:1.2;letter-spacing:.02em}
-.wrb-tile i{font-style:normal;font-size:12px;opacity:.8;margin-top:4px}
+.wrb-tile{position:absolute;inset:0;background:linear-gradient(160deg,var(--tc) 0%,#1a110b 100%)}
 .wrb-tile::before{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;border:1px solid rgba(255,255,255,.18)}
-.wrb-media.has-img .wrb-tile{display:none}.wrb-media.is-fallback .wrb-tile{display:flex}
-.wrb-credit{position:absolute;left:8px;bottom:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.55);padding:2px 7px;border-radius:4px;max-width:calc(100% - 16px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrb-media.has-img .wrb-tile{display:none}.wrb-media.is-fallback .wrb-tile{display:block}
+.wrb-cap{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;color:#fff;background:linear-gradient(to top,rgba(20,12,8,.88) 0%,rgba(20,12,8,.55) 55%,rgba(20,12,8,0) 100%)}
+.wrb-media.is-fallback .wrb-cap,.wrb-media:not(.has-img) .wrb-cap{background:none}
+.wrb-cap .wrb-nm{display:block;font-weight:700;line-height:1.25;letter-spacing:.02em;font-size:24px;word-break:keep-all;overflow-wrap:anywhere;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.wrb-cap .wrb-nm.is-m{font-size:20px}.wrb-cap .wrb-nm.is-l{font-size:17px}
+.wrb-cap .wrb-by{display:block;font-size:12px;opacity:.85;margin-top:4px}
+.wrb-credit{position:absolute;left:8px;top:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.55);padding:2px 7px;border-radius:4px;max-width:calc(100% - 80px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .wrb-media.is-fallback .wrb-credit{display:none}
 .wrb-flag{position:absolute;right:8px;top:8px;font-size:11px;font-weight:700;color:#fff;background:var(--brand);padding:2px 8px;border-radius:999px}
 .wrb-flag.is-arch{background:#6b6b6b}
 .wrb-body{display:flex;flex-direction:column;gap:6px;padding:14px 14px 12px;flex:1}
-.wrb-meta{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--sub);letter-spacing:.03em}
+.wrb-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--sub);letter-spacing:.02em}.wrb-meta span:first-child{color:var(--brand);font-weight:700}
 .wrb-meta b{color:var(--brand);font-weight:700}
-.wrb-name{font-size:17px;font-weight:700;line-height:1.35;margin:0}
-.wrb-series{font-size:12px;color:var(--sub);margin-top:-4px}
+.wrb-series{font-size:13px;color:var(--ink);font-weight:700}
 .wrb-keys{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink)}
 .wrb-keys span+span::before{content:"·";margin-right:10px;color:var(--rose)}
 .wrb-cask{font-size:12px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -179,9 +181,15 @@ function wr_bottlers_shortcode() {
 
 <div class="wrb-list">
 <?php foreach ( $items as $x ) :
-	$title = $x['distillery'];
-	if ( $x['age'] ) $title .= ' ' . $x['age'] . '年';
-	if ( $x['vintage'] ) $title .= ' ' . $x['vintage'];
+	if ( ! empty( $x['name'] ) ) {
+		$title = $x['name'];
+	} else {
+		$title = $x['distillery'];
+		if ( $x['age'] ) $title .= ' ' . $x['age'] . '年';
+		if ( $x['vintage'] ) $title .= ' ' . $x['vintage'];
+	}
+	$tlen  = mb_strlen( $title );
+	$tsize = $tlen > 18 ? ' is-l' : ( $tlen > 12 ? ' is-m' : '' );
 	$keys = array();
 	if ( $x['abv'] ) $keys[] = rtrim( rtrim( number_format( $x['abv'], 1 ), '0' ), '.' ) . '%';
 	if ( $x['bottles'] ) $keys[] = number_format( $x['bottles'] ) . '本限定';
@@ -190,21 +198,19 @@ function wr_bottlers_shortcode() {
 	if ( ! empty( $x['collab'] ) ) $keys[] = '提携：' . $x['collab'];
 	$detail = trim( ( $x['cask'] ? '樽：' . $x['cask'] . '。' : '' ) . $x['note'] );
 	$date   = $x['announced'] ? wr_bottlers_fmt_date( $x['announced'] ) . ' 発表' : wr_bottlers_fmt_date( $x['first_seen'] ) . ' 掲載';
-	$search = mb_strtolower( implode( ' ', array( $x['_bottler'], $x['series'], $x['distillery'], $x['region'], $x['cask'], $x['note'] ) ) );
+	$search = mb_strtolower( implode( ' ', array( $title, $x['_bottler'], $x['series'], $x['distillery'], $x['region'], $x['cask'], $x['note'] ) ) );
 	$price  = wr_bottlers_price( $x['price'], $fx );
 	$img    = isset( $x['image_url'] ) ? $x['image_url'] : '';
-	$tile_name = preg_replace( '/（.*?）/u', '', $x['distillery'] );
 	?>
 	<a class="wrb-card<?php echo $x['_archived'] ? ' is-arch' : ''; ?>" href="<?php echo esc_url( $x['source_url'] ); ?>" target="_blank" rel="noopener nofollow" data-jp="<?php echo esc_attr( $x['jp_status'] ); ?>" data-buy="<?php echo esc_attr( $x['buy_status'] ); ?>" data-b="<?php echo esc_attr( $x['_bottler'] ); ?>" data-r="<?php echo esc_attr( $x['region'] ); ?>" data-arch="<?php echo $x['_archived'] ? '1' : '0'; ?>" data-s="<?php echo esc_attr( $search ); ?>"<?php echo $x['_archived'] ? ' hidden' : ''; ?>>
 		<div class="wrb-media<?php echo $img ? ' has-img' : ''; ?>">
 			<?php if ( $img ) : ?><img src="<?php echo esc_url( $img ); ?>" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback');this.remove();"><span class="wrb-credit">画像：<?php echo esc_html( $x['source_name'] ); ?><?php echo ( isset( $x['image_scope'] ) && $x['image_scope'] === 'series' ) ? '（シリーズ画像）' : ''; ?></span><?php endif; ?>
-			<div class="wrb-tile" style="--tc:<?php echo esc_attr( wr_bottlers_region_color( $x['region'] ) ); ?>"><b><?php echo esc_html( $tile_name ); ?></b><i><?php echo esc_html( $x['_bottler'] ); ?></i></div>
+			<div class="wrb-tile" style="--tc:<?php echo esc_attr( wr_bottlers_region_color( $x['region'] ) ); ?>"></div>
+			<div class="wrb-cap"><span class="wrb-nm<?php echo $tsize; ?>"><?php echo esc_html( $title ); ?></span><span class="wrb-by"><?php echo esc_html( $x['_bottler'] ); ?></span></div>
 			<?php if ( $x['_archived'] ) : ?><span class="wrb-flag is-arch">アーカイブ</span><?php elseif ( ( strtotime( $today ) - strtotime( $x['_base'] ) ) / 86400 <= 14 ) : ?><span class="wrb-flag">NEW</span><?php endif; ?>
 		</div>
 		<div class="wrb-body">
-			<div class="wrb-meta"><b><?php echo esc_html( $x['_bottler'] ); ?></b><span><?php echo esc_html( $date ); ?></span></div>
-			<h3 class="wrb-name"><?php echo esc_html( $title ); ?></h3>
-			<?php if ( $x['series'] ) : ?><div class="wrb-series"><?php echo esc_html( $x['series'] ); ?></div><?php endif; ?>
+			<div class="wrb-meta"><span><?php echo esc_html( $x['series'] ? $x['series'] : '' ); ?></span><span><?php echo esc_html( $date ); ?></span></div>
 			<?php if ( $keys ) : ?><div class="wrb-keys"><?php foreach ( $keys as $k ) : ?><span><?php echo esc_html( $k ); ?></span><?php endforeach; ?></div><?php endif; ?>
 			<?php if ( $detail ) : ?><div class="wrb-cask"><?php echo esc_html( $detail ); ?></div><?php endif; ?>
 			<?php if ( $price ) : ?><div class="wrb-price"><b><?php echo esc_html( $price[0] ); ?></b><?php if ( $price[1] ) : ?><small><?php echo esc_html( $price[1] ); ?></small><?php endif; ?></div>

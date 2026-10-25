@@ -394,7 +394,8 @@
    "note": "60歳の記念向けとして発表。シングルカスク・カスクストレングス",
    "checked": "2026-10-25",
    "image_url": "https://www.thespiritsbusiness.com/content/uploads/2026/09/Gordon-MacPhail-Anniversary-Releases-series.jpg",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "ロングモーン 1966"
   },
   {
    "id": "gm-anniv-glengrant-1976",
@@ -425,7 +426,8 @@
    "note": "シングルカスク・カスクストレングス",
    "checked": "2026-10-25",
    "image_url": "https://www.thespiritsbusiness.com/content/uploads/2026/09/Gordon-MacPhail-Anniversary-Releases-series.jpg",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "グレングラント 1976"
   },
   {
    "id": "gm-anniv-miltonduff-1986",
@@ -456,7 +458,8 @@
    "note": "ルビー婚（40周年）向けとして発表",
    "checked": "2026-10-25",
    "image_url": "https://www.thespiritsbusiness.com/content/uploads/2026/09/Gordon-MacPhail-Anniversary-Releases-series.jpg",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "ミルトンダフ 1986"
   },
   {
    "id": "gm-anniv-linkwood-1996",
@@ -487,7 +490,8 @@
    "note": "シングルカスク・カスクストレングス",
    "checked": "2026-10-25",
    "image_url": "https://www.thespiritsbusiness.com/content/uploads/2026/09/Gordon-MacPhail-Anniversary-Releases-series.jpg",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "リンクウッド 1996"
   },
   {
    "id": "gm-cc-heritage-talisker-1987",
@@ -515,13 +519,14 @@
    "note": "G&Mが持つタリスカー最後の1樽。旧ブラックラベルの復刻デザイン",
    "checked": "2026-10-25",
    "image_url": null,
-   "image_scope": null
+   "image_scope": null,
+   "name": "タリスカー 1987"
   },
   {
    "id": "dl-scallywag-winter-2026",
    "bottler_id": "dl",
-   "series": "スカリーワグ ウィンターエディション 2026",
-   "distillery": "スペイサイド ブレンデッドモルト",
+   "series": "リマーカブル・リージョナル・モルト",
+   "distillery": "ブレンデッドモルト",
    "region": "スペイサイド",
    "vintage": null,
    "age": null,
@@ -543,16 +548,17 @@
    "jp_note": "",
    "buy_status": "buy_unknown",
    "buy_note": "海外の一部酒販店・通販で販売（記事時点）",
-   "note": "ナチュラル・カスクストレングス",
+   "note": "スペイサイドのブレンデッドモルト。ナチュラル・カスクストレングス",
    "checked": "2026-10-25",
    "image_url": "https://thewhiskeywash.com/wp-content/uploads/2026/09/featured-image-1790346731.webp",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "スカリーワグ ウィンターエディション 2026"
   },
   {
    "id": "dl-bigpeat-winter-2026",
    "bottler_id": "dl",
-   "series": "ビッグピート ウィンターエディション 2026",
-   "distillery": "アイラ ブレンデッドモルト",
+   "series": "リマーカブル・リージョナル・モルト",
+   "distillery": "ブレンデッドモルト",
    "region": "アイラ",
    "vintage": null,
    "age": 10,
@@ -574,16 +580,17 @@
    "jp_note": "",
    "buy_status": "buy_unknown",
    "buy_note": "海外の一部酒販店・通販で販売（記事時点）",
-   "note": "",
+   "note": "アイラのブレンデッドモルト",
    "checked": "2026-10-25",
    "image_url": "https://thewhiskeywash.com/wp-content/uploads/2026/09/featured-image-1790346731.webp",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "ビッグピート 10年 ウィンターエディション 2026"
   },
   {
    "id": "cb-this-is-a-10yo",
    "bottler_id": "compassbox",
    "series": "This is a 10-Year-Old Whisky",
-   "distillery": "ブレンデッドモルト（クライヌリッシュ66.5%、アードナムルッカン33.5%）",
+   "distillery": "ブレンデッドモルト",
    "region": "ハイランド",
    "vintage": null,
    "age": 10,
@@ -605,16 +612,17 @@
    "jp_note": "国内正規ルートあり。本品は米国向けの発表",
    "buy_status": "buy_online",
    "buy_note": "コンパスボックス米国公式通販（米国内向け）",
-   "note": "世界3,610本、うち米国600本",
+   "note": "クライヌリッシュ66.5%、アードナムルッカン33.5%。世界3,610本、うち米国600本",
    "checked": "2026-10-25",
    "image_url": "https://win-advisor-media-library.s3.us-west-1.amazonaws.com/wp-content/uploads/2026/09/23112419/Compass-Box-Scotch-Whiskymakers-Release-This-is-a-10-year-old-whisky.jpg",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "ブレンデッドモルト 10年"
   },
   {
    "id": "tbwc-21yo-world-blend",
    "bottler_id": "boutiquey",
    "series": "サマータイム・スペシャルズ",
-   "distillery": "ワールドブレンド（複数国）",
+   "distillery": "ワールドブレンド",
    "region": "その他",
    "vintage": null,
    "age": 21,
@@ -636,10 +644,11 @@
    "jp_note": "国内正規ルートあり（ウィスク・イー取扱）",
    "buy_status": "buy_online",
    "buy_note": "Master of Malt（英国）で販売中（記事時点）",
-   "note": "",
+   "note": "複数の国の原酒をブレンド",
    "checked": "2026-10-25",
    "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "ワールドブレンド 21年"
   },
   {
    "id": "tbwc-bowmore-17",
@@ -670,7 +679,8 @@
    "note": "",
    "checked": "2026-10-25",
    "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "ボウモア 17年"
   },
   {
    "id": "tbwc-inchgower-12",
@@ -701,7 +711,8 @@
    "note": "",
    "checked": "2026-10-25",
    "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "インチガワー 12年"
   },
   {
    "id": "tbwc-inchgower-12-cs",
@@ -732,7 +743,8 @@
    "note": "",
    "checked": "2026-10-25",
    "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "インチガワー 12年 カスクストレングス"
   },
   {
    "id": "tbwc-clynelish-12",
@@ -763,7 +775,8 @@
    "note": "",
    "checked": "2026-10-25",
    "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "クライヌリッシュ 12年"
   },
   {
    "id": "tbwc-clynelish-12-cs",
@@ -794,7 +807,8 @@
    "note": "",
    "checked": "2026-10-25",
    "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "クライヌリッシュ 12年 カスクストレングス"
   },
   {
    "id": "tbwc-girvan-35",
@@ -825,7 +839,8 @@
    "note": "",
    "checked": "2026-10-25",
    "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
-   "image_scope": "series"
+   "image_scope": "series",
+   "name": "ガーヴァン 35年"
   },
   {
    "id": "milroys-vr-auchentoshan-1987-38",
@@ -856,7 +871,8 @@
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
    "checked": "2026-10-25",
    "image_url": null,
-   "image_scope": null
+   "image_scope": null,
+   "name": "オーヘントッシャン 38年 1987"
   },
   {
    "id": "milroys-vr-bowmore-2010-15",
@@ -887,7 +903,8 @@
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
    "checked": "2026-10-25",
    "image_url": null,
-   "image_scope": null
+   "image_scope": null,
+   "name": "ボウモア 15年 2010"
   },
   {
    "id": "milroys-vr-bowmore-2004-22",
@@ -918,7 +935,8 @@
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
    "checked": "2026-10-25",
    "image_url": null,
-   "image_scope": null
+   "image_scope": null,
+   "name": "ボウモア 22年 2004"
   },
   {
    "id": "milroys-vr-bowmore-2013-13",
@@ -949,7 +967,8 @@
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
    "checked": "2026-10-25",
    "image_url": null,
-   "image_scope": null
+   "image_scope": null,
+   "name": "ボウモア 13年 2013"
   },
   {
    "id": "milroys-vrb-ardmore-1978-47",
@@ -980,7 +999,8 @@
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
    "checked": "2026-10-25",
    "image_url": null,
-   "image_scope": null
+   "image_scope": null,
+   "name": "アードモア 47年 1978"
   }
  ]
 }
