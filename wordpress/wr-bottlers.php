@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.5.1
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.6.0
  * 使い方：プラグインとして有効化 → 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -179,24 +179,22 @@ function wr_bottlers_shortcode() {
 .wrb-nm.is-m{font-size:20px}.wrb-nm.is-l{font-size:17px}
 .wrb-by{display:block;font-size:12px;color:var(--cream);margin-top:4px}
 .wrb-body{display:flex;flex-direction:column;gap:6px;padding:14px 14px 12px;flex:1}
-.wrb-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--sub)}
-.wrb-meta span:first-child{color:var(--brand);font-weight:700}
-.wrb-meta span:last-child{white-space:nowrap}
+.wrb-meta{font-size:12px;color:var(--brand);font-weight:700;line-height:1.5}
 .wrb-keys{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:13px;font-variant-numeric:tabular-nums}
 .wrb-keys span+span::before{content:"·";margin-right:10px;color:var(--rose)}
 .wrb-cask{font-size:12px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.wrb-price{display:flex;align-items:baseline;gap:8px;margin-top:2px}
-.wrb-price b{font-size:20px;font-variant-numeric:tabular-nums}
-.wrb-price small{font-size:12px;color:var(--sub)}
-.wrb-price.is-na b{font-size:13px;font-weight:400;color:var(--sub)}
+.wrb-price{display:flex;flex-direction:column;gap:0;margin-top:4px;line-height:1.3}
+.wrb-price b{font-size:22px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.wrb-price small{font-size:12px;color:var(--sub);white-space:nowrap}
+.wrb-price.is-na b{font-size:14px;font-weight:400;color:var(--sub);padding:5px 0}
 .wrb-judge{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);display:grid;gap:5px;font-size:12px}
-.wrb-judge div{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline}
+.wrb-judge div{display:block;line-height:1.5}
 .wrb-chip{display:inline-flex;align-items:center;gap:6px;font-weight:700}
 .wrb-dot{flex:none;display:inline-block;width:9px;height:9px;border-radius:50%;background:#bbb}
 .wrb-dot.jp_official{background:var(--brand)}.wrb-dot.jp_route{background:var(--gold)}.wrb-dot.jp_parallel{background:#c46a1c}
 .wrb-dot.buy_online{background:#2f6f86}
-.wrb-judge em{font-style:normal;color:var(--sub)}
-.wrb-go{font-size:12px;color:var(--brand);font-weight:700;text-align:right;margin-top:8px}
+.wrb-judge em{display:block;font-style:normal;color:var(--sub);padding-left:15px;font-size:11px}
+.wrb-go{font-size:12px;color:var(--brand);font-weight:700;text-align:right;margin-top:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .wrb-sec{margin:36px 0 0}
 #wrb h2.wrb-h2,#wrb h3.wrb-nm,#wrb h3.wrb-q{all:unset;box-sizing:border-box;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important;position:static!important;text-align:left!important}
 #wrb h2.wrb-h2::before,#wrb h2.wrb-h2::after,#wrb h3.wrb-nm::before,#wrb h3.wrb-nm::after,#wrb h3.wrb-q::before,#wrb h3.wrb-q::after{content:none!important;display:none!important}
@@ -321,10 +319,10 @@ function wr_bottlers_shortcode() {
 			<div class="wrb-cap"><h3 class="wrb-nm st-css-no st-css-no2<?php echo $tsize; ?>"><?php echo esc_html( $title ); ?></h3><span class="wrb-by"><?php echo esc_html( $x['_bottler'] ); ?></span></div>
 		</div>
 		<div class="wrb-body">
-			<div class="wrb-meta"><span><?php echo esc_html( $x['series'] ? $x['series'] : '' ); ?></span><span><?php echo esc_html( $date ); ?></span></div>
+			<?php if ( $x['series'] ) : ?><div class="wrb-meta"><?php echo esc_html( $x['series'] ); ?></div><?php endif; ?>
 			<?php if ( $keys ) : ?><div class="wrb-keys"><?php foreach ( $keys as $k ) : ?><span><?php echo esc_html( $k ); ?></span><?php endforeach; ?></div><?php endif; ?>
 			<?php if ( $detail ) : ?><div class="wrb-cask"><?php echo esc_html( $detail ); ?></div><?php endif; ?>
-			<?php if ( $price ) : ?><div class="wrb-price"><b><?php echo esc_html( $price[0] ); ?></b><?php if ( $price[1] ) : ?><small><?php echo esc_html( $price[1] ); ?>・税送料別</small><?php endif; ?></div>
+			<?php if ( $price ) : ?><div class="wrb-price"><b><?php echo esc_html( $price[0] ); ?></b><small><?php echo $price[1] ? esc_html( $price[1] ) . '・税送料別' : '円換算なし'; ?></small></div>
 			<?php else : ?><div class="wrb-price is-na"><b>公式価格は未発表</b></div><?php endif; ?>
 			<?php if ( ! empty( $x['jp_price'] ) ) : ?><div class="wrb-cask">国内公式価格 ¥<?php echo number_format( $x['jp_price'] ); ?>（税込）</div><?php endif; ?>
 			<div class="wrb-judge">
