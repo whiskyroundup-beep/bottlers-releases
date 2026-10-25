@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.4.0
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.4.1
  * 使い方：プラグインとして有効化 → 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -129,8 +129,6 @@ function wr_bottlers_shortcode() {
 .wrb-more{display:none}
 .wrb-filters{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:8px}
 .wrb-filters select,.wrb-filters input[type=search]{width:100%;height:42px;border:1px solid var(--line);border-radius:8px;padding:0 10px;font-size:14px;background:var(--card);color:var(--ink);margin:0}
-.wrb-checks{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:13px;color:var(--sub)}
-.wrb-checks label{display:flex;gap:6px;align-items:center;cursor:pointer;margin:0}
 .wrb-result{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--sub);padding:10px 0;border-top:1px solid var(--line);margin:0 0 12px}
 .wrb-result b{color:var(--ink);font-size:15px}
 .wrb-reset{border:0;background:none;color:var(--brand);font-size:13px;cursor:pointer;padding:0;text-decoration:underline}
@@ -168,6 +166,9 @@ function wr_bottlers_shortcode() {
 .wrb-judge em{font-style:normal;color:var(--sub)}
 .wrb-go{font-size:12px;color:var(--brand);font-weight:700;text-align:right;margin-top:8px}
 .wrb-empty{padding:40px;text-align:center;color:var(--sub)}
+.wrb-archbtn{display:block;margin:18px auto 0;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 18px;font-size:13px;cursor:pointer}
+.wrb-archbtn[aria-pressed="true"]{background:var(--soft)}
+.wrb-tabs .lbl+.lbl,.wrb-tabs .wrb-tab+.lbl{margin-top:6px}
 .wrb-small{font-size:12px;color:var(--sub);margin-top:24px;padding-top:14px;border-top:1px solid var(--line);display:grid;gap:6px}
 @media (max-width:900px){.wrb-list{grid-template-columns:repeat(2,1fr)}.wrb-filters{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){
@@ -208,6 +209,8 @@ function wr_bottlers_shortcode() {
 		<?php foreach ( $jp_order as $k ) : if ( empty( $jp_count[ $k ] ) ) continue; ?>
 		<button type="button" class="wrb-tab" data-jp="<?php echo $k; ?>" aria-pressed="false"><span class="wrb-dot <?php echo $k; ?>"></span><?php echo esc_html( $L['jp_status'][ $k ] ); ?><span class="c"><?php echo $jp_count[ $k ]; ?></span></button>
 		<?php endforeach; ?>
+		<span class="lbl">海外通販</span>
+		<button type="button" class="wrb-tab wrb-buy" aria-pressed="false"><span class="wrb-dot buy_online"></span>海外通販ありだけ表示<span class="c"><?php echo count( array_filter( $active, function ( $x ) { return $x['buy_status'] === 'buy_online'; } ) ); ?></span></button>
 	</div>
 	<button type="button" class="wrb-more" aria-expanded="false">検索・絞り込み・並び替え <span aria-hidden="true">▾</span></button>
 	<div class="wrb-adv">
@@ -219,11 +222,6 @@ function wr_bottlers_shortcode() {
 			<?php foreach ( $regions as $r ) : ?><option><?php echo esc_html( $r ); ?></option><?php endforeach; ?></select>
 			<select class="wrb-s" aria-label="並び替え"><option value="new">新しい順</option><option value="cheap">価格の安い順</option><option value="high">価格の高い順</option></select>
 		</div>
-		<div class="wrb-checks">
-			<label><input type="checkbox" class="wrb-buy"> 海外通販で買えるものだけ</label>
-			<label><input type="checkbox" class="wrb-arch"> 90日以上前の発表（<?php echo $archived; ?>件）も表示</label>
-		</div>
-	</div>
 </div>
 
 <div class="wrb-result" aria-live="polite"><span><b class="wrb-n"><?php echo count( $active ); ?></b> 件を表示中</span><button type="button" class="wrb-reset" hidden>条件をリセット</button></div>
@@ -273,6 +271,7 @@ function wr_bottlers_shortcode() {
 <?php endforeach; ?>
 </div>
 <p class="wrb-empty" hidden>条件に合うリリースはありません。条件を変えるか、リセットしてください。</p>
+<?php if ( $archived ) : ?><button type="button" class="wrb-archbtn" aria-pressed="false">90日以上前のリリースも見る（<?php echo $archived; ?>件）</button><?php endif; ?>
 
 <div class="wrb-small">
 	<p>世界のインディペンデントボトラーが公式に発表したリリースを、輸入元や販売店に偏らず掲載しています。蒸留所のオフィシャル、酒販店・バー・イベント向けの限定ボトルは掲載していません。カードを押すと元記事（外部サイト）が新しいタブで開きます。</p>
@@ -283,9 +282,10 @@ function wr_bottlers_shortcode() {
 <script>
 (function(){
 	var root=document.getElementById('wrb');if(!root)return;
-	var list=root.querySelector('.wrb-list'),tabs=root.querySelectorAll('.wrb-tab'),cards=[].slice.call(root.querySelectorAll('.wrb-card'));
+	var list=root.querySelector('.wrb-list'),tabs=root.querySelectorAll('.wrb-tab[data-jp]'),cards=[].slice.call(root.querySelectorAll('.wrb-card'));
 	var empty=root.querySelector('.wrb-empty'),num=root.querySelector('.wrb-n'),reset=root.querySelector('.wrb-reset');
-	var b=root.querySelector('.wrb-b'),r=root.querySelector('.wrb-r'),q=root.querySelector('.wrb-q'),s=root.querySelector('.wrb-s'),buy=root.querySelector('.wrb-buy'),arch=root.querySelector('.wrb-arch');
+	var b=root.querySelector('.wrb-b'),r=root.querySelector('.wrb-r'),q=root.querySelector('.wrb-q'),s=root.querySelector('.wrb-s'),buyBtn=root.querySelector('.wrb-buy'),archBtn=root.querySelector('.wrb-archbtn');
+	var buy=false,arch=false;
 	var more=root.querySelector('.wrb-more'),adv=root.querySelector('.wrb-adv');
 	var jp='all';
 	more.addEventListener('click',function(){var o=adv.classList.toggle('is-open');more.setAttribute('aria-expanded',o?'true':'false');});
@@ -302,17 +302,20 @@ function wr_bottlers_shortcode() {
 	function apply(){
 		var k=q.value.trim().toLowerCase(),n=0;
 		cards.forEach(function(c){
-			var d=c.dataset,ok=(arch.checked||d.arch==='0')&&(jp==='all'||d.jp===jp)&&(!b.value||d.b===b.value)&&(!r.value||d.r===r.value)&&(!buy.checked||d.buy==='buy_online')&&(!k||d.s.indexOf(k)>-1);
+			var d=c.dataset,ok=(arch||d.arch==='0')&&(jp==='all'||d.jp===jp)&&(!b.value||d.b===b.value)&&(!r.value||d.r===r.value)&&(!buy||d.buy==='buy_online')&&(!k||d.s.indexOf(k)>-1);
 			c.hidden=!ok;if(ok)n++;
 		});
 		num.textContent=n;empty.hidden=n>0;
-		reset.hidden=!(jp!=='all'||b.value||r.value||k||buy.checked||arch.checked||s.value!=='new');
+		reset.hidden=!(jp!=='all'||b.value||r.value||k||buy||arch||s.value!=='new');
 	}
 	tabs.forEach(function(t){t.addEventListener('click',function(){jp=t.dataset.jp;tabs.forEach(function(x){x.setAttribute('aria-pressed',x===t?'true':'false');});apply();});});
-	[b,r,buy,arch].forEach(function(el){el.addEventListener('change',apply);});
+	[b,r].forEach(function(el){el.addEventListener('change',apply);});
+	buyBtn.addEventListener('click',function(){buy=!buy;buyBtn.setAttribute('aria-pressed',buy?'true':'false');apply();});
+	if(archBtn)archBtn.addEventListener('click',function(){arch=!arch;archBtn.setAttribute('aria-pressed',arch?'true':'false');archBtn.textContent=arch?'90日以上前のリリースを隠す':archBtn.dataset.label;apply();});
+	if(archBtn)archBtn.dataset.label=archBtn.textContent;
 	s.addEventListener('change',function(){sortCards();apply();});
 	q.addEventListener('input',apply);
-	reset.addEventListener('click',function(){jp='all';tabs.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.jp==='all'?'true':'false');});b.value='';r.value='';q.value='';s.value='new';buy.checked=false;arch.checked=false;sortCards();apply();});
+	reset.addEventListener('click',function(){jp='all';tabs.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.jp==='all'?'true':'false');});b.value='';r.value='';q.value='';s.value='new';buy=false;buyBtn.setAttribute('aria-pressed','false');if(arch&&archBtn){archBtn.click();}arch=false;sortCards();apply();});
 })();
 </script>
 </div>
