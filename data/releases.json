@@ -110,7 +110,7 @@
    "tier": "A",
    "tier_confirmed": true,
    "jp_importer": "スリーリバーズ",
-   "check_note": "新作は掲載済みの10年のみ",
+   "check_note": "新作は掲載済みの10年のみ。ヘドニズム2026は2月発表で期間外",
    "checked": "2026-10-25",
    "name_en": "Compass Box"
   },
@@ -130,7 +130,7 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": "ウィスク・イー",
-   "check_note": "公式サイト取得不可。直近90日の公式発表は確認できず",
+   "check_note": "公式サイト取得不可。WebSearchでも直近90日の公式発表・業界報道は確認できず",
    "checked": "2026-10-25",
    "name_en": "Wemyss Malts"
   },
@@ -150,7 +150,7 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": "ウィスク・イー",
-   "check_note": "公式サイトは本文取得不可。新作は業界メディアで確認",
+   "check_note": "公式サイトは本文取得不可。WebSearchで新たな業界報道は確認できず",
    "checked": "2026-10-25",
    "name_en": "Duncan Taylor"
   },
@@ -210,7 +210,7 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": null,
-   "check_note": "公式サイト取得不可。業界メディアにも直近90日の発表なし",
+   "check_note": "公式サイト取得不可。WebSearchでも直近90日の発表なし",
    "checked": "2026-10-25",
    "name_en": "North Star Spirits"
   },
@@ -260,7 +260,7 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": null,
-   "check_note": "公式サイト取得不可。業界メディアにも直近90日の発表なし",
+   "check_note": "公式サイト取得不可。WebSearchでも直近90日の発表なし",
    "checked": "2026-10-25",
    "name_en": "Langside Distillers"
   },
@@ -270,7 +270,7 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": null,
-   "check_note": "公式サイト取得不可。業界メディアにも直近90日の発表なし",
+   "check_note": "公式サイト取得不可。WebSearchでも直近90日の発表なし",
    "checked": "2026-10-25",
    "name_en": "Golden Cask"
   },
@@ -390,7 +390,7 @@
    "tier": "B",
    "tier_confirmed": true,
    "jp_importer": "ジャパンインポートシステム",
-   "check_note": "ボトラー自身の発表なし。直近90日の新作は未確認",
+   "check_note": "ボトラー自身の発表なし。ケルティック ラフロイグ1999は輸入元の2月発表で期間外",
    "checked": "2026-10-25",
    "name_en": "Kingsbury"
   },
@@ -410,7 +410,7 @@
    "tier": "B",
    "tier_confirmed": false,
    "jp_importer": null,
-   "check_note": "公式サイト取得不可。直近90日の業界メディア報道もなし",
+   "check_note": "公式サイト取得不可。WebSearchでも直近90日の業界メディア報道なし",
    "checked": "2026-10-25",
    "name_en": "Jack Wiebers"
   }
