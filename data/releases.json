@@ -39,7 +39,8 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ニュース・業界メディアで新作発表を確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Gordon & MacPhail"
   },
   {
    "id": "cadenhead",
@@ -48,7 +49,8 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式サイトに新作ページあり（2026年11月分6本を確認、ページ取得不可のため次回再取得）",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Cadenhead's"
   },
   {
    "id": "dl",
@@ -57,7 +59,8 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式発表を業界メディアで確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Douglas Laing"
   },
   {
    "id": "hunterlaing",
@@ -66,7 +69,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "直近90日の公式発表は未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Hunter Laing"
   },
   {
    "id": "adelphi",
@@ -75,7 +79,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "2026年7月の新作を確認（90日超のため未掲載）",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Adelphi"
   },
   {
    "id": "elixir",
@@ -84,7 +89,8 @@
    "tier_confirmed": false,
    "jp_importer": "ウィスク・イー",
    "check_note": "直近90日の公式発表は未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Elixir Distillers"
   },
   {
    "id": "boutiquey",
@@ -93,7 +99,8 @@
    "tier_confirmed": true,
    "jp_importer": "ウィスク・イー",
    "check_note": "公式ブログ・業界メディアで新作発表を確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "That Boutique-y Whisky Company"
   },
   {
    "id": "compassbox",
@@ -102,7 +109,8 @@
    "tier_confirmed": true,
    "jp_importer": "スリーリバーズ",
    "check_note": "公式発表を業界メディアで確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Compass Box"
   },
   {
    "id": "milroys",
@@ -111,7 +119,8 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式サイトに最新リリース一覧あり",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Milroy's of Soho"
   },
   {
    "id": "wemyss",
@@ -120,7 +129,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Wemyss Malts"
   },
   {
    "id": "murraymcdavid",
@@ -129,7 +139,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Murray McDavid"
   },
   {
    "id": "duncantaylor",
@@ -138,7 +149,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Duncan Taylor"
   },
   {
    "id": "blackadder",
@@ -147,7 +159,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Blackadder"
   },
   {
    "id": "bbr",
@@ -156,7 +169,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Berry Bros. & Rudd"
   },
   {
    "id": "thompson",
@@ -165,7 +179,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "新作（ミステリーモルト No.6）の存在は確認、公式の発表日は未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Thompson Bros."
   },
   {
    "id": "decadent",
@@ -174,7 +189,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Decadent Drinks (Whisky Sponge)"
   },
   {
    "id": "watt",
@@ -183,7 +199,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Watt Whisky"
   },
   {
    "id": "northstar",
@@ -192,7 +209,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "North Star Spirits"
   },
   {
    "id": "dramfool",
@@ -201,7 +219,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Dramfool"
   },
   {
    "id": "infrequent",
@@ -210,7 +229,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Infrequent Flyers"
   },
   {
    "id": "hannah",
@@ -219,7 +239,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Hannah Whisky Merchants"
   },
   {
    "id": "eadie",
@@ -228,7 +249,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "James Eadie"
   },
   {
    "id": "langside",
@@ -237,7 +259,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Langside Distillers"
   },
   {
    "id": "goldencask",
@@ -246,7 +269,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Golden Cask"
   },
   {
    "id": "twa",
@@ -255,7 +279,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "The Whisky Agency"
   },
   {
    "id": "maltbarn",
@@ -264,7 +289,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Malt Barn"
   },
   {
    "id": "sansibar",
@@ -273,7 +299,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Sansibar"
   },
   {
    "id": "archives",
@@ -282,7 +309,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Archives"
   },
   {
    "id": "wm",
@@ -291,7 +319,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Wilson & Morgan"
   },
   {
    "id": "samaroli",
@@ -300,7 +329,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Samaroli"
   },
   {
    "id": "scn",
@@ -309,7 +339,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Single Cask Nation"
   },
   {
    "id": "tt",
@@ -318,7 +349,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "T&T TOYAMA"
   },
   {
    "id": "acorn",
@@ -327,7 +359,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Acorn"
   },
   {
    "id": "signatory",
@@ -336,7 +369,8 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式の新作一覧なし",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Signatory Vintage"
   },
   {
    "id": "adr",
@@ -345,7 +379,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "A.D. Rattray"
   },
   {
    "id": "kingsbury",
@@ -354,7 +389,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Kingsbury"
   },
   {
    "id": "coopers",
@@ -363,7 +399,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Cooper's Choice"
   },
   {
    "id": "wiebers",
@@ -372,7 +409,8 @@
    "tier_confirmed": false,
    "jp_importer": null,
    "check_note": "未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "name_en": "Jack Wiebers"
   }
  ],
  "releases": [

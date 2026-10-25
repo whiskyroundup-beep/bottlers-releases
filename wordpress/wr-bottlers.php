@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.4.4
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.5.0
  * 使い方：プラグインとして有効化 → 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -26,7 +26,26 @@ function wr_bottlers_get_data() {
 	}
 	set_transient( 'wr_bottlers_data_v4', $data, HOUR_IN_SECONDS );
 	update_option( 'wr_bottlers_backup_v4', $data, false );
+	wr_bottlers_sync_modified( $data );
 	return $data;
+}
+
+/**
+ * データの更新日が変わったら、ショートコードを置いた固定ページの「更新日」を合わせる
+ * （サイトマップの lastmod や検索エンジンに、週次更新を伝えるため）
+ */
+function wr_bottlers_sync_modified( $data ) {
+	if ( empty( $data['updated'] ) ) return;
+	if ( get_option( 'wr_bottlers_synced' ) === $data['updated'] ) return;
+	global $wpdb;
+	$ids = $wpdb->get_col( "SELECT ID FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type = 'page' AND post_content LIKE '%[bottlers_list%'" );
+	$local = $data['updated'] . ' ' . current_time( 'H:i:s' );
+	$gmt   = get_gmt_from_date( $local );
+	foreach ( $ids as $id ) {
+		$wpdb->update( $wpdb->posts, array( 'post_modified' => $local, 'post_modified_gmt' => $gmt ), array( 'ID' => $id ) );
+		clean_post_cache( $id );
+	}
+	update_option( 'wr_bottlers_synced', $data['updated'], false );
 }
 
 function wr_bottlers_fmt_date( $d ) {
@@ -175,6 +194,31 @@ function wr_bottlers_shortcode() {
 .wrb-dot.buy_online{background:#2f6f86}
 .wrb-judge em{font-style:normal;color:var(--sub)}
 .wrb-go{font-size:12px;color:var(--brand);font-weight:700;text-align:right;margin-top:8px}
+.wrb-sec{margin:36px 0 0}
+#wrb h2.wrb-h2,#wrb h3.wrb-nm,#wrb h3.wrb-q{all:unset;box-sizing:border-box}
+#wrb h2.wrb-h2::before,#wrb h2.wrb-h2::after,#wrb h3.wrb-nm::before,#wrb h3.wrb-nm::after,#wrb h3.wrb-q::before,#wrb h3.wrb-q::after{content:none!important;display:none!important}
+#wrb h2.wrb-h2{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:700;color:var(--ink);line-height:1.4;margin:0 0 12px;padding:0 0 8px;border-bottom:2px solid var(--brand)}
+#wrb h2.wrb-h2 small{font-size:12px;font-weight:400;color:var(--sub)}
+.wrb-sec-lead{font-size:13px!important;color:var(--sub);margin:0 0 12px!important;line-height:1.7!important}
+.wrb-bl{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px;margin:0!important;padding:0!important;list-style:none!important}
+.wrb-bl li{margin:0!important;padding:0!important;border:0!important;background:none!important}
+.wrb-bl li::before{display:none!important}
+.wrb-bl button,.wrb-bl span.off{width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:8px 10px;font-size:13px;color:var(--ink);line-height:1.4;cursor:pointer}
+.wrb-bl button:hover{border-color:var(--brand)}
+.wrb-bl span.off{cursor:default;color:var(--sub);background:var(--soft)}
+.wrb-bl i{font-style:normal;font-size:11px;color:var(--sub);display:block}
+.wrb-bl b{font-weight:700;font-variant-numeric:tabular-nums;color:var(--brand);white-space:nowrap}
+.wrb-bl span.off b{color:var(--sub);font-weight:400;font-size:11px}
+.wrb-faq{display:grid;gap:8px}
+.wrb-faq details{border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.wrb-faq summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;justify-content:space-between;gap:10px}
+.wrb-faq summary::-webkit-details-marker{display:none}
+.wrb-faq summary::after{content:"＋";color:var(--brand);flex:none}
+.wrb-faq details[open] summary::after{content:"－"}
+#wrb h3.wrb-nm{display:block;font-weight:700;line-height:1.25;letter-spacing:.02em;font-size:24px;color:#fff;word-break:keep-all;overflow-wrap:anywhere}
+#wrb h3.wrb-nm.is-m{font-size:20px}#wrb h3.wrb-nm.is-l{font-size:17px}
+#wrb h3.wrb-q{font-size:14px;font-weight:700;color:var(--ink);line-height:1.5}
+#wrb .wrb-faq .a{padding:0 14px 14px;font-size:14px!important;line-height:1.8!important;color:var(--ink);margin:0!important}
 .wrb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wrb-empty{padding:40px;text-align:center;color:var(--sub)}
 .wrb-archbtn{display:block;margin:18px auto 0;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 18px;font-size:13px;cursor:pointer}
@@ -242,6 +286,7 @@ function wr_bottlers_shortcode() {
 		</div>
 </div>
 
+<h2 class="wrb-h2" id="wrb-list">最新リリース一覧</h2>
 <div class="wrb-result" aria-live="polite"><span><b class="wrb-n"><?php echo count( $active ); ?></b> 件を表示中</span><button type="button" class="wrb-reset" hidden>条件をリセット</button></div>
 
 <div class="wrb-list">
@@ -270,7 +315,7 @@ function wr_bottlers_shortcode() {
 		<div class="wrb-media" style="--tc:<?php echo esc_attr( wr_bottlers_region_color( $x['region'] ) ); ?>">
 			<span class="wrb-rg"><?php echo esc_html( $rg ); ?></span>
 			<?php if ( $x['_archived'] ) : ?><span class="wrb-flag is-arch">90日以上前</span><?php elseif ( $x['_new'] ) : ?><span class="wrb-flag">NEW</span><?php endif; ?>
-			<div class="wrb-cap"><span class="wrb-nm<?php echo $tsize; ?>"><?php echo esc_html( $title ); ?></span><span class="wrb-by"><?php echo esc_html( $x['_bottler'] ); ?></span></div>
+			<div class="wrb-cap"><h3 class="wrb-nm<?php echo $tsize; ?>"><?php echo esc_html( $title ); ?></h3><span class="wrb-by"><?php echo esc_html( $x['_bottler'] ); ?></span></div>
 		</div>
 		<div class="wrb-body">
 			<div class="wrb-meta"><span><?php echo esc_html( $x['series'] ? $x['series'] : '' ); ?></span><span><?php echo esc_html( $date ); ?></span></div>
@@ -290,6 +335,67 @@ function wr_bottlers_shortcode() {
 </div>
 <p class="wrb-empty" hidden>条件に合うリリースはありません。条件を変えるか、リセットしてください。</p>
 <?php if ( $archived ) : ?><button type="button" class="wrb-archbtn" aria-pressed="false">90日以上前のリリースも見る（<?php echo $archived; ?>件）</button><?php endif; ?>
+
+<section class="wrb-sec" aria-labelledby="wrb-bl-h">
+	<h2 class="wrb-h2" id="wrb-bl-h">掲載しているボトラー<small><?php echo $n_all; ?>社</small></h2>
+	<p class="wrb-sec-lead">以下のボトラーの公式発表を毎週チェックしています。名前を押すと、そのボトラーのリリースだけを表示します。</p>
+	<ul class="wrb-bl">
+	<?php
+	$bcount = array_count_values( array_column( $active, '_bottler' ) );
+	$blist  = $data['bottlers'];
+	usort( $blist, function ( $a, $b ) use ( $bcount ) {
+		$ca = isset( $bcount[ $a['name'] ] ) ? $bcount[ $a['name'] ] : 0;
+		$cb = isset( $bcount[ $b['name'] ] ) ? $bcount[ $b['name'] ] : 0;
+		return $cb - $ca;
+	} );
+	foreach ( $blist as $bt ) :
+		$c  = isset( $bcount[ $bt['name'] ] ) ? $bcount[ $bt['name'] ] : 0;
+		$en = isset( $bt['name_en'] ) ? $bt['name_en'] : '';
+		?>
+		<li><?php if ( $c ) : ?><button type="button" data-bt="<?php echo esc_attr( $bt['name'] ); ?>"><span><?php echo esc_html( $bt['name'] ); ?><i><?php echo esc_html( $en ); ?></i></span><b><?php echo $c; ?>件</b></button><?php else : ?><span class="off"><span><?php echo esc_html( $bt['name'] ); ?><i><?php echo esc_html( $en ); ?></i></span><b><?php echo $bt['tier'] === 'B' ? '一部のみ掲載' : '掲載なし'; ?></b></span><?php endif; ?></li>
+	<?php endforeach; ?>
+	</ul>
+</section>
+
+<section class="wrb-sec" aria-labelledby="wrb-faq-h">
+	<h2 class="wrb-h2" id="wrb-faq-h">よくある質問</h2>
+	<div class="wrb-faq">
+	<?php
+	$faq = array(
+		array( 'ボトラーズ（インディペンデントボトラー）とは？', '蒸留所から樽ごと原酒を買い付け、独自に熟成・瓶詰めして販売する会社のことです。同じ蒸留所でも、オフィシャルとはひと味違う個性や、1樽だけの限定品に出会えるのが魅力です。' ),
+		array( '「' . $L['jp_status']['jp_route'] . '」とはどういう意味ですか？', 'そのボトラーの商品を扱う日本の正規輸入元はあるものの、この商品の日本への入荷はまだ発表されていない状態です。後日、国内で発売される可能性があります。' ),
+		array( '海外通販で買うときの注意点は？', '個人で飲む分の酒類は海外から取り寄せられますが、商品代とは別に送料・関税・酒税・消費税がかかります。日本へ発送しているかはお店ごとに違うので、購入前に各店の配送ポリシーを確認してください。20歳未満の方は購入できません。' ),
+		array( '情報はどこから集めていますか？', '各ボトラーの公式サイトやニュース、公式発表を伝える業界メディアです。特定の輸入元や販売店の情報に偏らないよう、ボトラーの公式発表を起点にしています。' ),
+		array( 'どのくらいの頻度で更新されますか？', '毎週月曜日に更新しています。発表から' . $days . '日を過ぎたリリースは、一覧の下の「' . $days . '日以上前のリリース」にまとめています。' ),
+	);
+	foreach ( $faq as $f ) : ?>
+		<details><summary><h3 class="wrb-q"><?php echo esc_html( $f[0] ); ?></h3></summary><p class="a"><?php echo esc_html( $f[1] ); ?></p></details>
+	<?php endforeach; ?>
+	</div>
+</section>
+
+<?php
+// --- 2. 構造化データ（一覧ページとして登録。商品としては登録しない）
+$ld_items = array();
+$pos = 1;
+foreach ( $active as $x ) {
+	$nm = ! empty( $x['name'] ) ? $x['name'] : $x['distillery'];
+	$ld_items[] = array( '@type' => 'ListItem', 'position' => $pos++, 'name' => $nm . '（' . $x['_bottler'] . '）', 'url' => $x['source_url'] );
+}
+$ld = array(
+	'@context'     => 'https://schema.org',
+	'@type'        => 'CollectionPage',
+	'name'         => get_the_title(),
+	'description'  => '世界のインディペンデントボトラー' . $n_all . '社の新作情報を毎週更新。日本で買えるか、海外通販で買えるか、公式価格まで一覧で確認できます。',
+	'url'          => get_permalink(),
+	'inLanguage'   => 'ja',
+	'dateModified' => $data['updated'],
+	'publisher'    => array( '@type' => 'Organization', 'name' => 'Whisky Roundup', 'url' => home_url( '/' ) ),
+	'mainEntity'   => array( '@type' => 'ItemList', 'numberOfItems' => count( $ld_items ), 'itemListElement' => $ld_items ),
+);
+$faq_ld = array();
+?>
+<script type="application/ld+json"><?php echo wp_json_encode( $ld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ); ?></script>
 
 <div class="wrb-small">
 	<p>世界のインディペンデントボトラーが公式に発表したリリースを、輸入元や販売店に偏らず掲載しています。蒸留所のオフィシャル、酒販店・バー・イベント向けの限定ボトルは掲載していません。カードを押すと元記事（外部サイト）が新しいタブで開きます。</p>
@@ -333,6 +439,10 @@ function wr_bottlers_shortcode() {
 	if(archBtn)archBtn.dataset.label=archBtn.textContent;
 	s.addEventListener('change',function(){sortCards();apply();});
 	q.addEventListener('input',apply);
+	root.querySelectorAll('.wrb-bl button').forEach(function(btn){btn.addEventListener('click',function(){
+		b.value=btn.dataset.bt;adv.classList.add('is-open');more.setAttribute('aria-expanded','true');apply();
+		var t=root.querySelector('#wrb-list');if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+	});});
 	reset.addEventListener('click',function(){jp='all';tabs.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.jp==='all'?'true':'false');});b.value='';r.value='';q.value='';s.value='new';buy=false;buyBtn.setAttribute('aria-pressed','false');if(arch&&archBtn){archBtn.click();}arch=false;sortCards();apply();});
 })();
 </script>
