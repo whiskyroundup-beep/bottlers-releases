@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.4.3
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.4.4
  * 使い方：プラグインとして有効化 → 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -101,8 +101,12 @@ function wr_bottlers_shortcode() {
 .wrb *{box-sizing:border-box}.wrb [hidden]{display:none!important}
 .wrb a,.wrb a:hover{text-decoration:none;color:inherit;box-shadow:none}
 .wrb p{margin:0}
-.wrb-intro{margin:0 0 16px;display:grid;gap:8px}
-.wrb-catch{font-size:20px;font-weight:700;color:var(--brand);line-height:1.4;word-break:keep-all;overflow-wrap:anywhere}
+.wrb-intro{margin:0 0 18px;display:grid;gap:8px}
+#wrb .wrb-intro p{font-size:15px!important;line-height:1.8!important;margin:0!important;padding:0!important}
+#wrb .wrb-notes{font-size:12px!important;line-height:1.7!important}
+#wrb .wrb-notes li{font-size:12px!important;line-height:1.7!important}
+#wrb p,#wrb li,#wrb dd,#wrb dt{letter-spacing:normal}
+#wrb .wrb-help p,#wrb .wrb-small p{font-size:inherit!important;line-height:1.7!important;margin:0!important}
 .wrb-notes{margin:4px 0 0!important;padding:0!important;list-style:none!important;display:grid;gap:2px;font-size:12px;color:var(--sub)}
 .wrb-notes li{margin:0!important;padding:0 0 0 1.1em!important;position:relative;border:0!important;background:none!important}
 .wrb-notes li::before{content:"※";position:absolute;left:0;top:0;background:none!important;width:auto!important;height:auto!important;border:0!important}
@@ -188,7 +192,6 @@ function wr_bottlers_shortcode() {
 </style>
 
 <div class="wrb-intro">
-	<p class="wrb-catch">世界のボトラーズ新作情報、<wbr>毎週月曜日に更新！</p>
 	<p>「気になっていたボトラーの新作、いつの間にか出ていた」。そんな見逃しを少しでも減らしたくて、このページを作りました。</p>
 	<p>著名なボトラー<?php echo $n_all; ?>社のリリースについて国内外の情報を取りまとめ、日本で買えるか、海外通販で買えるかまで、できる限り調べて載せています。国内入荷を待つか、海外から取り寄せるか。迷ったときの判断材料にしてもらえたらうれしいです！</p>
 	<ul class="wrb-notes">
