@@ -27,7 +27,8 @@
    "source_url": "https://whiskies.wiki/whisky/w42566/",
    "source_name": "WhiskyData",
    "note": "日本向け限定。参考価格62,000円（税抜）",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "importer_doc"
   },
   {
    "id": "dl-op-bennevis-2012-asaya",
@@ -49,7 +50,8 @@
    "source_url": "https://whiskies.wiki/whisky/w41807/",
    "source_name": "WhiskyData",
    "note": "麻屋商店のプライベートボトル",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "saltire-bowmore-2006-53-barkitchen",
@@ -71,7 +73,8 @@
    "source_url": "https://whiskies.wiki/whisky/w41569/",
    "source_name": "WhiskyData",
    "note": "バーキッチンのプライベートボトル",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "twa-laphroaig-2013-whiskyagents",
@@ -93,7 +96,8 @@
    "source_url": "https://whiskies.wiki/whisky/w41675/",
    "source_name": "WhiskyData",
    "note": "ドイツの酒販店の記念ボトル。国内の取扱元は未確認",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "mom-invergordon-2009-16",
@@ -115,7 +119,8 @@
    "source_url": "https://whiskies.wiki/whisky/w39104/",
    "source_name": "WhiskyData",
    "note": "日本入荷は90本",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "adr-craigellachie-2012-10",
@@ -137,7 +142,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194119392",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "kingsbury-gold-bowmore-2015-11",
@@ -159,7 +165,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194119390",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "kingsbury-gold-bowmore-2014-12",
@@ -181,7 +188,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194119387",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "milroys-soho-bennevis-2013-12",
@@ -203,7 +211,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194119370",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "milroys-soho-linkwood-2013-13",
@@ -225,7 +234,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194119368",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "milroys-soho-highlandpark-2016-8",
@@ -247,7 +257,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194119367",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "maltbarn-invergordon-1997-29",
@@ -269,7 +280,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194099818",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "maltbarn-glengarioch-2010-16",
@@ -291,7 +303,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194099816",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "maltbarn-glenspey-2001-24",
@@ -313,7 +326,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194099813",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "maltbarn-orkney-2006-20",
@@ -335,7 +349,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194099810",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "maltbarn-caolila-2007-19",
@@ -357,7 +372,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194099808",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "dl-op-strathearn-2018-8",
@@ -379,7 +395,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194080489",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "ag-rcs-glenelgin-2014-11",
@@ -401,7 +418,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194080484",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "ag-rcs-caolila-2014-11",
@@ -423,7 +441,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194080480",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "dl-op-glenelgin-2011-15",
@@ -445,7 +464,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194065301",
    "source_name": "武川蒸留酒販売",
    "note": "度数は掲載ページで48.4%と58.5%の表記が混在（要確認）",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "wm-glenrothes-2010-15",
@@ -467,7 +487,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194065297",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "watt-teaninich-2015-10",
@@ -489,7 +510,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194065291",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "watt-northbritish-1991-35",
@@ -511,7 +533,8 @@
    "source_url": "https://mukawa-spirit.com/?pid=194065288",
    "source_name": "武川蒸留酒販売",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "wormtub-craigellachie-13",
@@ -533,7 +556,8 @@
    "source_url": "https://store.musashiya-net.co.jp/products/list?category_id=2205",
    "source_name": "武蔵屋（ウィスク・イー取扱一覧）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "wormtub-mortlach-12",
@@ -555,7 +579,8 @@
    "source_url": "https://store.musashiya-net.co.jp/products/list?category_id=2205",
    "source_name": "武蔵屋（ウィスク・イー取扱一覧）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "smos-royalbrackla-9",
@@ -577,7 +602,8 @@
    "source_url": "https://store.musashiya-net.co.jp/products/list?category_id=2205",
    "source_name": "武蔵屋（ウィスク・イー取扱一覧）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "smos-bennevis-6-hp",
@@ -599,7 +625,8 @@
    "source_url": "https://store.musashiya-net.co.jp/products/list?category_id=2205",
    "source_name": "武蔵屋（ウィスク・イー取扱一覧）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "boutiquey-glenelgin-9",
@@ -621,7 +648,8 @@
    "source_url": "https://store.musashiya-net.co.jp/products/list?category_id=2205",
    "source_name": "武蔵屋（ウィスク・イー取扱一覧）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "gm-cc-heritage-talisker-1987",
@@ -643,7 +671,8 @@
    "source_url": "https://whiskyforeveryone.com/inbox-july-10-2026/",
    "source_name": "Whisky for Everyone",
    "note": "G&Mが持つタリスカー最後の1樽。旧ブラックラベルのデザインで復刻",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "official"
   },
   {
    "id": "gm-speymalt-macallan-2000-3235",
@@ -665,7 +694,8 @@
    "source_url": "https://www.masterofmalt.com/whiskies/the-macallan/macallan-2000-bottled-2026-cask-3235-speymalt-gordon-and-macphail-whisky/?sku=146682",
    "source_name": "Master of Malt",
    "note": "英国価格 £379.95",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "cadenhead-enigma-macallan-16",
@@ -687,7 +717,8 @@
    "source_url": "https://maltwhiskyagency.com/product-tag/limited-edition/",
    "source_name": "The Malt Whisky Agency",
    "note": "英国価格 £160",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   },
   {
    "id": "signatory-ucf-teaninich-2016-10",
@@ -709,7 +740,13 @@
    "source_url": "https://www.thewhiskyexchange.com/p/88076/teaninich-2016-10-year-old-signatory",
    "source_name": "The Whisky Exchange",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "source_type": "retailer"
   }
- ]
+ ],
+ "source_types": {
+  "official": "公式発表",
+  "importer_doc": "輸入元資料",
+  "retailer": "販売店・DB情報"
+ }
 }

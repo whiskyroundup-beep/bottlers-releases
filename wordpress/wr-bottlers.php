@@ -93,7 +93,9 @@ function wr_bottlers_shortcode() {
 .wrb-price{font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}
 .wrb-price.is-na{font-size:12px;font-weight:400;color:var(--wrb-sub)}
 .wrb-where{font-size:12px;color:var(--wrb-sub)}
-.wrb-src{font-size:12px;white-space:nowrap}
+.wrb-src{font-size:12px;text-align:right}
+.wrb-st{display:inline-block;font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;margin-bottom:3px;border:1px solid currentColor}
+.wrb-st.is-official{color:#2f6b3a}.wrb-st.is-importer_doc{color:#3b5b6b}.wrb-st.is-retailer{color:#8a7a6e}
 .wrb-src a{color:var(--wrb-brand)}
 .wrb-note{font-size:12px;color:var(--wrb-sub);background:var(--wrb-bg);border-radius:4px;padding:4px 8px}
 .wrb-empty{padding:30px;text-align:center;color:var(--wrb-sub)}
@@ -144,13 +146,13 @@ function wr_bottlers_shortcode() {
 				<?php else : ?><div class="wrb-price is-na">国内価格 未発表</div><?php endif; ?>
 				<?php if ( $x['where_to_buy'] && $x['where_to_buy'] !== '—' ) : ?><div class="wrb-where"><?php echo esc_html( $x['where_to_buy'] ); ?></div><?php endif; ?>
 			</div>
-			<div class="wrb-src"><a href="<?php echo esc_url( $x['source_url'] ); ?>" target="_blank" rel="noopener nofollow">出典：<?php echo esc_html( $x['source_name'] ); ?></a></div>
+			<div class="wrb-src"><?php $st = isset( $x['source_type'] ) ? $x['source_type'] : 'retailer'; $stl = isset( $data['source_types'][ $st ] ) ? $data['source_types'][ $st ] : ''; if ( $stl ) : ?><span class="wrb-st is-<?php echo esc_attr( $st ); ?>"><?php echo esc_html( $stl ); ?></span><br><?php endif; ?><a href="<?php echo esc_url( $x['source_url'] ); ?>" target="_blank" rel="noopener nofollow">出典：<?php echo esc_html( $x['source_name'] ); ?></a></div>
 		</div>
 	</article>
 <?php endforeach; ?>
 </div>
 <p class="wrb-empty" hidden>条件に合うリリースはありません。</p>
-<p class="wrb-disclaimer">※価格・在庫・発売日は各販売店・輸入元の発表時点の情報です。購入前に必ず販売店でご確認ください。「海外発売・国内入荷見込み」は国内で流通実績のあるボトラーの海外リリースで、国内入荷を保証するものではありません。20歳未満の飲酒は法律で禁止されています。</p>
+<p class="wrb-disclaimer">※価格・在庫・発売日は各販売店・輸入元の発表時点の情報です。購入前に必ず販売店でご確認ください。「海外発売・国内入荷見込み」は国内で流通実績のあるボトラーの海外リリースで、国内入荷を保証するものではありません。出典ラベルは「公式発表」（輸入元・ボトラー・販売元の公式発表）、「輸入元資料」（輸入元の案内資料に基づく情報）、「販売店・DB情報」（酒販店やデータベースの掲載情報）の3種類で、公式情報が出しだい差し替えています。20歳未満の飲酒は法律で禁止されています。</p>
 
 <script>
 (function(){
