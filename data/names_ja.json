@@ -109,5 +109,25 @@
   "Tormore": "トーモア",
   "Tullibardine": "タリバーディン",
   "Wolfburn": "ウルフバーン"
- }
+ },
+ "others": {
+  "Blended Malt": "ブレンデッドモルト",
+  "World Blend": "ワールドブレンド",
+  "Secret Islay": "シークレット・アイラ",
+  "Secret Lowland": "シークレット・ローランド",
+  "Secret Speyside": "シークレット・スペイサイド",
+  "Undisclosed": "非公表",
+  "Campbeltown Blended Malt": "キャンベルタウン ブレンデッドモルト",
+  "Coleburn Deluxe": "コールバーン・デラックス",
+  "La Girafe Chic": "ラ・ジラフ・シック",
+  "Finglassie": "フィングラッシー",
+  "Blacksboat Bridge": "ブラックスボート・ブリッジ",
+  "Rock Town": "ロックタウン",
+  "Smooth Ambler": "スムースアンブラー",
+  "High Wire": "ハイワイヤー",
+  "Balcones": "バルコネス",
+  "Boulder Spirits": "ボルダー・スピリッツ",
+  "Clear Creek": "クリアクリーク"
+ },
+ "_note_others": "others はブレンド・ブランド名・非公表表記・米国などの蒸留所。distilleries と同じく表記を統一する"
 }

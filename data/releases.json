@@ -129,7 +129,7 @@
    "name": "ウィームス・モルト",
    "tier": "A",
    "tier_confirmed": false,
-   "jp_importer": null,
+   "jp_importer": "ウィスク・イー",
    "check_note": "公式サイト取得不可。直近90日の公式発表は確認できず",
    "checked": "2026-10-25",
    "name_en": "Wemyss Malts"
@@ -149,7 +149,7 @@
    "name": "ダンカンテイラー",
    "tier": "A",
    "tier_confirmed": false,
-   "jp_importer": null,
+   "jp_importer": "ウィスク・イー",
    "check_note": "公式サイトは本文取得不可。新作は業界メディアで確認",
    "checked": "2026-10-25",
    "name_en": "Duncan Taylor"
@@ -1862,8 +1862,8 @@
    "source_url": "https://thewhiskeywash.com/whiskey-news/duncan-taylor-launches-its-first-mizunara-cask-finished-whisky/",
    "source_name": "The Whiskey Wash",
    "collab": null,
-   "jp_status": "jp_unknown",
-   "jp_note": "",
+   "jp_status": "jp_route",
+   "jp_note": "輸入元：ウィスク・イー",
    "buy_status": "buy_unknown",
    "buy_note": "",
    "note": "同社初のミズナラ樽仕上げ。直営店で販売",

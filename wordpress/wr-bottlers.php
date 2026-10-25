@@ -1,6 +1,6 @@
 <?php
 /**
- * Whisky Roundup ボトラーズ最新リリース（世界版）v1.7.0
+ * Whisky Roundup ボトラーズ最新リリース（世界版）v1.7.1
  * 使い方：プラグインとして有効化 → 固定ページに [bottlers_list]
  * データ：GitHub の data/releases.json（毎週自動更新）を1時間キャッシュ
  * 要件：REQUIREMENTS.md
@@ -362,7 +362,7 @@ function wr_bottlers_shortcode() {
 
 <section class="wrb-sec" aria-labelledby="wrb-bl-h">
 	<h2 class="wrb-h2 st-css-no st-css-no2" id="wrb-bl-h">掲載しているボトラー<small><?php echo $n_all; ?>社</small></h2>
-	<p class="wrb-sec-lead">以下のボトラーの公式発表を毎週チェックしています。名前を押すと、そのボトラーのリリースだけを表示します。</p>
+	<p class="wrb-sec-lead">以下のボトラーの公式発表を毎週チェックしています。名前を押すと、そのボトラーのリリースだけを表示します。「確認中」は、公式サイトの情報を自動で取得できず、新作の有無をまだ確かめられていないボトラーです。</p>
 	<ul class="wrb-bl">
 	<?php
 	$bcount = array_count_values( array_column( $active, '_bottler' ) );
@@ -376,7 +376,7 @@ function wr_bottlers_shortcode() {
 		$c  = isset( $bcount[ $bt['name'] ] ) ? $bcount[ $bt['name'] ] : 0;
 		$en = isset( $bt['name_en'] ) ? $bt['name_en'] : '';
 		?>
-		<li><?php if ( $c ) : ?><button type="button" data-bt="<?php echo esc_attr( $bt['name'] ); ?>"><span><?php echo esc_html( $bt['name'] ); ?><i><?php echo esc_html( $en ); ?></i></span><b><?php echo $c; ?>件</b></button><?php else : ?><span class="off"><span><?php echo esc_html( $bt['name'] ); ?><i><?php echo esc_html( $en ); ?></i></span><b><?php echo $bt['tier'] === 'B' ? '一部のみ掲載' : '掲載なし'; ?></b></span><?php endif; ?></li>
+		<li><?php if ( $c ) : ?><button type="button" data-bt="<?php echo esc_attr( $bt['name'] ); ?>"><span><?php echo esc_html( $bt['name'] ); ?><i><?php echo esc_html( $en ); ?></i></span><b><?php echo $c; ?>件</b></button><?php else : ?><span class="off"><span><?php echo esc_html( $bt['name'] ); ?><i><?php echo esc_html( $en ); ?></i></span><b><?php echo empty( $bt['tier_confirmed'] ) ? '確認中' : '直近の新作なし'; ?></b></span><?php endif; ?></li>
 	<?php endforeach; ?>
 	</ul>
 </section>

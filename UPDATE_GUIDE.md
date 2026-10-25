@@ -9,12 +9,12 @@
 4. 既存データを見直す：判定①②の更新、公式価格・国内公式価格の判明、`jp_pending` の解除
 5. 各社の `check_note`・`checked`、区分B/Aの見直し（`tier_confirmed`）を更新する
 6. `fx`（為替）を最新に更新する（GBP・USD・EUR。出典名を `fx.source` に）
-7. `updated` と `count` を更新し、`python3 -m json.tool data/releases.json` で検証してコミット・push
+7. `updated` と `count` を更新し、`python3 scripts/validate.py` を実行する。**エラーが0件になるまでコミット・pushしない**（整形のずれは `python3 scripts/validate.py --fix`）。エラーを直せない項目は、その項目の追加・変更を取り消してから検証し直す
 
 ## 判定①（jp_status）
 - `jp_official`：輸入元・ボトラーの公式発表で日本への入荷（予定）が確認できる。入荷前は `jp_pending: true`
 - `jp_parallel`：国内酒販店で並行品として販売。`jp_note` に「並行品（販売店：◯◯）」と書く
-- `jp_route`：そのボトラーの正規品が国内で流通しているが、本品の入荷は未発表。`jp_note` に根拠（例：ウィスク・イー取扱）
+- `jp_route`：そのボトラーの正規品が国内で流通しているが、本品の入荷は未発表。`jp_note` に「輸入元：◯◯」と書く。輸入元は、そのボトラーの `bottlers[].jp_importer` に入っている会社だけ。`jp_importer` は輸入元自身の公式サイトの取扱ブランド一覧で確認できたときだけ設定する（酒販店の表示や推測では設定しない）
 - `jp_none`：正規・並行とも流通がないと確認できた場合のみ
 - `jp_unknown`：上記を確認できない場合。根拠なく `jp_none` にしない
 
