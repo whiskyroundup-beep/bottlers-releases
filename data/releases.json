@@ -392,7 +392,9 @@
    "buy_status": "buy_online",
    "buy_note": "G&M公式で予約受付中（記事時点）",
    "note": "60歳の記念向けとして発表。シングルカスク・カスクストレングス",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://www.thespiritsbusiness.com/content/uploads/2026/09/Gordon-MacPhail-Anniversary-Releases-series.jpg",
+   "image_scope": "series"
   },
   {
    "id": "gm-anniv-glengrant-1976",
@@ -421,7 +423,9 @@
    "buy_status": "buy_online",
    "buy_note": "G&M公式で予約受付中（記事時点）",
    "note": "シングルカスク・カスクストレングス",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://www.thespiritsbusiness.com/content/uploads/2026/09/Gordon-MacPhail-Anniversary-Releases-series.jpg",
+   "image_scope": "series"
   },
   {
    "id": "gm-anniv-miltonduff-1986",
@@ -450,7 +454,9 @@
    "buy_status": "buy_online",
    "buy_note": "G&M公式で予約受付中（記事時点）",
    "note": "ルビー婚（40周年）向けとして発表",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://www.thespiritsbusiness.com/content/uploads/2026/09/Gordon-MacPhail-Anniversary-Releases-series.jpg",
+   "image_scope": "series"
   },
   {
    "id": "gm-anniv-linkwood-1996",
@@ -479,7 +485,9 @@
    "buy_status": "buy_online",
    "buy_note": "G&M公式で予約受付中（記事時点）",
    "note": "シングルカスク・カスクストレングス",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://www.thespiritsbusiness.com/content/uploads/2026/09/Gordon-MacPhail-Anniversary-Releases-series.jpg",
+   "image_scope": "series"
   },
   {
    "id": "gm-cc-heritage-talisker-1987",
@@ -505,7 +513,9 @@
    "buy_status": "buy_unknown",
    "buy_note": "",
    "note": "G&Mが持つタリスカー最後の1樽。旧ブラックラベルの復刻デザイン",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": null,
+   "image_scope": null
   },
   {
    "id": "dl-scallywag-winter-2026",
@@ -534,7 +544,9 @@
    "buy_status": "buy_unknown",
    "buy_note": "海外の一部酒販店・通販で販売（記事時点）",
    "note": "ナチュラル・カスクストレングス",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://thewhiskeywash.com/wp-content/uploads/2026/09/featured-image-1790346731.webp",
+   "image_scope": "series"
   },
   {
    "id": "dl-bigpeat-winter-2026",
@@ -563,7 +575,9 @@
    "buy_status": "buy_unknown",
    "buy_note": "海外の一部酒販店・通販で販売（記事時点）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://thewhiskeywash.com/wp-content/uploads/2026/09/featured-image-1790346731.webp",
+   "image_scope": "series"
   },
   {
    "id": "cb-this-is-a-10yo",
@@ -592,7 +606,9 @@
    "buy_status": "buy_online",
    "buy_note": "コンパスボックス米国公式通販（米国内向け）",
    "note": "世界3,610本、うち米国600本",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://win-advisor-media-library.s3.us-west-1.amazonaws.com/wp-content/uploads/2026/09/23112419/Compass-Box-Scotch-Whiskymakers-Release-This-is-a-10-year-old-whisky.jpg",
+   "image_scope": "series"
   },
   {
    "id": "tbwc-21yo-world-blend",
@@ -621,7 +637,9 @@
    "buy_status": "buy_online",
    "buy_note": "Master of Malt（英国）で販売中（記事時点）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
+   "image_scope": "series"
   },
   {
    "id": "tbwc-bowmore-17",
@@ -650,7 +668,9 @@
    "buy_status": "buy_online",
    "buy_note": "Master of Malt（英国）で販売中（記事時点）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
+   "image_scope": "series"
   },
   {
    "id": "tbwc-inchgower-12",
@@ -679,7 +699,9 @@
    "buy_status": "buy_online",
    "buy_note": "Master of Malt（英国）で販売中（記事時点）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
+   "image_scope": "series"
   },
   {
    "id": "tbwc-inchgower-12-cs",
@@ -708,7 +730,9 @@
    "buy_status": "buy_online",
    "buy_note": "Master of Malt（英国）で販売中（記事時点）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
+   "image_scope": "series"
   },
   {
    "id": "tbwc-clynelish-12",
@@ -737,7 +761,9 @@
    "buy_status": "buy_online",
    "buy_note": "Master of Malt（英国）で販売中（記事時点）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
+   "image_scope": "series"
   },
   {
    "id": "tbwc-clynelish-12-cs",
@@ -766,7 +792,9 @@
    "buy_status": "buy_online",
    "buy_note": "Master of Malt（英国）で販売中（記事時点）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
+   "image_scope": "series"
   },
   {
    "id": "tbwc-girvan-35",
@@ -795,7 +823,9 @@
    "buy_status": "buy_online",
    "buy_note": "Master of Malt（英国）で販売中（記事時点）",
    "note": "",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": "https://i0.wp.com/thewhiskywire.com/wp-content/uploads/2026/08/tbwc-aug-2026-all-bottles-1.jpg?fit=1200%2C883&ssl=1",
+   "image_scope": "series"
   },
   {
    "id": "milroys-vr-auchentoshan-1987-38",
@@ -824,7 +854,9 @@
    "buy_status": "buy_unknown",
    "buy_note": "公式通販で完売",
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": null,
+   "image_scope": null
   },
   {
    "id": "milroys-vr-bowmore-2010-15",
@@ -853,7 +885,9 @@
    "buy_status": "buy_online",
    "buy_note": "ミルロイズ公式通販",
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": null,
+   "image_scope": null
   },
   {
    "id": "milroys-vr-bowmore-2004-22",
@@ -882,7 +916,9 @@
    "buy_status": "buy_online",
    "buy_note": "ミルロイズ公式通販",
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": null,
+   "image_scope": null
   },
   {
    "id": "milroys-vr-bowmore-2013-13",
@@ -911,7 +947,9 @@
    "buy_status": "buy_online",
    "buy_note": "ミルロイズ公式通販",
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": null,
+   "image_scope": null
   },
   {
    "id": "milroys-vrb-ardmore-1978-47",
@@ -940,7 +978,9 @@
    "buy_status": "buy_unknown",
    "buy_note": "公式通販で完売",
    "note": "公式の最新リリース一覧に掲載（発表日は非公開）",
-   "checked": "2026-10-25"
+   "checked": "2026-10-25",
+   "image_url": null,
+   "image_scope": null
   }
  ]
 }
