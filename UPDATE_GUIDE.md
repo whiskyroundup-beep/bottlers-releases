@@ -1,37 +1,33 @@
 # 週次更新ガイド（自動調査用）
 
-`data/releases.json` を毎週更新するときのルール。
+`REQUIREMENTS.md` が最上位のルール。迷ったら要件定義に従う。
 
-## 対象
-- インディペンデントボトラー（シグナトリー、G&M、ケイデンヘッド、ダグラスレイン、ハンターレイン、アデルフィ、エリクサー、SMWS、ウィスク・イー等の輸入元オリジナル、国内ボトラー等）のリリース
-- 酒販店・バーがボトラーの樽から選んだプライベートボトル
-- 対象外：蒸留所オフィシャル（オフィシャル樽のPBも含む）、ウイスキー以外
+## 毎週の手順
+1. `data/releases.json` の `bottlers` を上から順に、各社の**公式**情報（公式サイトの新作ページ・ニュース・公式ショップの新着・公式SNS）と、公式発表を報じた業界メディア（The Spirits Business、The Whisky Wire、The Whiskey Wash、Whisky for Everyone、Whisky Magazine、DRAM Scotland 等）を確認する
+2. 直近の新作を `releases` に追加する（掲載対象・除外は要件定義3章）
+3. 判定①（国内導入）と判定②（個人輸入）を付ける
+4. 既存データを見直す：判定①②の更新、公式価格・国内公式価格の判明、`jp_pending` の解除
+5. 各社の `check_note`・`checked`、区分B/Aの見直し（`tier_confirmed`）を更新する
+6. `fx`（為替）を最新に更新する（GBP・USD・EUR。出典名を `fx.source` に）
+7. `updated` と `count` を更新し、`python3 -m json.tool data/releases.json` で検証してコミット・push
 
-## status
-- `upcoming` 国内発売予定（発売日が未来）
-- `released` 国内発売済み
-- `overseas` 海外発売・国内入荷見込み（国内で正規流通実績のあるボトラーの海外リリース）
-- 発売日が過ぎた `upcoming` は `released` に変更。国内発売が確認できた `overseas` は国内情報で更新
+## 判定①（jp_status）
+- `jp_official`：輸入元・ボトラーの公式発表で日本への入荷（予定）が確認できる。入荷前は `jp_pending: true`
+- `jp_parallel`：国内酒販店で並行品として販売。`jp_note` に「並行品（販売店：◯◯）」と書く
+- `jp_route`：そのボトラーの正規品が国内で流通しているが、本品の入荷は未発表。`jp_note` に根拠（例：ウィスク・イー取扱）
+- `jp_none`：正規・並行とも流通がないと確認できた場合のみ
+- `jp_unknown`：上記を確認できない場合。根拠なく `jp_none` にしない
 
-## source_type（出典の強さ）
-1. `official` 輸入元・ボトラー・販売元（PBなら選定店）の公式発表、公式発表を受けた業界メディア
-2. `importer_doc` 輸入元の案内資料に基づく情報（資料に基づくと明記したDB・販売店を含む）
-3. `retailer` 酒販店・データベースの掲載情報
-- 公式情報を最優先で探す。既存の `retailer` / `importer_doc` も、公式情報が見つかれば `source_url` と `source_type` を差し替える
-
-## 主な調査先
-- 輸入元：ウィスク・イー、スリーリバーズ、ジャパンインポートシステム、スコッチモルト販売、ミリオン商事 など
-- ボトラー公式サイト・ニュース
-- 国内データ：WhiskyData（whiskies.wiki）新商品、PR TIMES
-- 酒販店の新入荷：信濃屋、武川蒸留酒販売、リカーズハセガワ等（`retailer` 扱い）
-- 海外：Whisky for Everyone、The Spirits Business、各ボトラーの発表
+## 判定②（buy_status）
+- `buy_online`：ボトラー直販、または海外酒販店で販売中を確認。`buy_note` に販売先名
+- `buy_unknown`：確認できない、または完売
+- 日本への発送可否は書かない（ページ側で「各店で要確認」と表示）
 
 ## 書き方
-- 説明文・テイスティングノートは転載しない（`note` は自分の言葉で40字程度まで）
-- 不明な値は `null`。推測で埋めない
-- `price_jpy` は税込。税抜しか分からなければ ×1.1 して `note` に「参考価格◯円（税抜）」
-- `id` は英小文字とハイフン。重複させない
-- 発売・入荷から120日を過ぎた `released` は削除
-- `updated` と各行の `checked` を当日の日付にする
-- `count` を件数に合わせる
-- コミット前に `python3 -m json.tool data/releases.json` で検証
+- 公式価格は `price: {amount, currency}`（原文の通貨）。酒販店の売価は入れない
+- 国内価格 `jp_price` は輸入元・ボトラーの公式発表のみ（税込）
+- 発表日 `announced` が不明なら `null`、`first_seen` に初掲載日
+- 説明文・テイスティングノートは転載しない。`note` は自分の言葉で40字程度まで
+- 不明な値は `null`。推測で埋めない（熟成年数をヴィンテージから計算しない、容量を仮定しない）
+- `id` は英小文字とハイフンで一意に
+- アーカイブは削除せず残す（ページ側で90日超を自動判定）。ただし発表から1年を過ぎたものは削除してよい
