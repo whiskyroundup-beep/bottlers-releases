@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-01",
- "count": 109,
+ "count": 110,
  "fx": {
   "date": "2026-10-30",
   "GBP": 210.99,
@@ -150,7 +150,7 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": "ウィスク・イー",
-   "check_note": "10/30の業界報道で信濃屋との日本独占販売契約を確認。発表のオクターブ14樽は信濃屋向けのため対象外。輸入元は取扱一覧で未確認のため据え置き",
+   "check_note": "10/28に信濃屋トレーディングとの輸入代理店契約を発表。信濃屋との提携ボトルのうち、詳細が出たラフロイグ2004を掲載。残りは11/6・7の東京ウイスキーフェスティバルで発表予定。輸入元欄は取扱一覧で未確認のため据え置き",
    "checked": "2026-11-01",
    "name_en": "Duncan Taylor"
   },
@@ -3673,6 +3673,35 @@
    "checked": "2026-10-25",
    "name": "キャンベルタウン 10年 2015",
    "name_en": "Campbeltown Blended Malt 10 2015 Friends of Oak Acorn"
+  },
+  {
+   "id": "duncantaylor-octave-shinanoya-laphroaig-2004-22",
+   "bottler_id": "duncantaylor",
+   "series": "ジ・オクターブ 信濃屋シリーズ",
+   "distillery": "ラフロイグ",
+   "region": "アイラ",
+   "vintage": "2004",
+   "age": 22,
+   "cask": "オロロソシェリーカスク フィニッシュ",
+   "abv": null,
+   "bottles": null,
+   "size_ml": null,
+   "price": null,
+   "jp_price": null,
+   "announced": "2026-10-28",
+   "first_seen": "2026-11-01",
+   "source_url": "https://thewhiskeywash.com/whiskey-news/duncan-taylor-brings-octave-whisky-to-japan-via-shinanoya/",
+   "source_name": "The Whiskey Wash",
+   "collab": "信濃屋",
+   "jp_status": "jp_official",
+   "jp_pending": true,
+   "jp_note": "輸入元：信濃屋トレーディング",
+   "buy_status": "buy_unknown",
+   "buy_note": "",
+   "note": "日本向けに選ばれた樽。チェス柄ラベル。価格・発売日は11月6日発表予定",
+   "checked": "2026-11-01",
+   "name": "ラフロイグ 22年 2004",
+   "name_en": "Laphroaig 22 2004 The Octave Shinanoya Series Duncan Taylor"
   }
  ]
 }
