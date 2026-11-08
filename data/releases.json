@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-01",
- "count": 110,
+ "updated": "2026-11-08",
+ "count": 112,
  "fx": {
-  "date": "2026-10-30",
-  "GBP": 210.99,
-  "USD": 157.54,
-  "EUR": 176.26,
+  "date": "2026-11-05",
+  "GBP": 213.38,
+  "USD": 158.21,
+  "EUR": 177.92,
   "source": "三菱UFJ銀行 公表相場（三菱UFJリサーチ&コンサルティング掲載、TTSとTTBの平均）"
  },
  "labels": {
@@ -41,7 +41,7 @@
    "tier_confirmed": true,
    "jp_importer": "ジャパンインポートシステム",
    "check_note": "公式サイトでヴィンテージ・モーメンツ、コニサーズチョイス新作を確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Gordon & MacPhail"
   },
   {
@@ -51,7 +51,7 @@
    "tier_confirmed": true,
    "jp_importer": "ウィスク・イー",
    "check_note": "WebSearchで11月分の公式発表は確認できず（見つかった新作記事は3月発表で期間外）",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Cadenhead's"
   },
   {
@@ -61,7 +61,7 @@
    "tier_confirmed": true,
    "jp_importer": "ジャパンインポートシステム",
    "check_note": "公式ショップでOPアイラ ハロウィンを確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Douglas Laing"
   },
   {
@@ -71,7 +71,7 @@
    "tier_confirmed": true,
    "jp_importer": "ジャパンインポートシステム",
    "check_note": "直近90日の公式発表は未確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Hunter Laing"
   },
   {
@@ -81,7 +81,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式サイトに新作一覧なし。直近90日の公式発表は未確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Adelphi"
   },
   {
@@ -90,8 +90,8 @@
    "tier": "B",
    "tier_confirmed": true,
    "jp_importer": "ウィスク・イー",
-   "check_note": "直近90日の公式発表は未確認",
-   "checked": "2026-11-01",
+   "check_note": "WebSearchで直近90日の新作報道なし",
+   "checked": "2026-11-08",
    "name_en": "Elixir Distillers"
   },
   {
@@ -101,7 +101,7 @@
    "tier_confirmed": true,
    "jp_importer": "ウィスク・イー",
    "check_note": "公式ブログの最新は掲載済みのサマータイム・スペシャルズ",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "That Boutique-y Whisky Company"
   },
   {
@@ -110,8 +110,8 @@
    "tier": "A",
    "tier_confirmed": true,
    "jp_importer": "スリーリバーズ",
-   "check_note": "新作は掲載済みの10年のみ。ヘドニズム2026は2月発表で期間外",
-   "checked": "2026-11-01",
+   "check_note": "11/6にヘドニズム2026が最終版と報道（2月発表で期間外）。新作は掲載済みの10年のみ",
+   "checked": "2026-11-08",
    "name_en": "Compass Box"
   },
   {
@@ -121,7 +121,7 @@
    "tier_confirmed": true,
    "jp_importer": "エイコーン",
    "check_note": "公式ショップの新着を確認。新着のソーホー・セレクションは熟成3年未満のため対象外",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Milroy's of Soho"
   },
   {
@@ -130,8 +130,8 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": "ウィスク・イー",
-   "check_note": "業界報道でシングルカスク19本の発売を確認したが、発表日と銘柄の詳細が不明のため未掲載",
-   "checked": "2026-11-01",
+   "check_note": "業界報道で11/5発売のキャッスル・コレクション第1弾を確認（以前の「シングルカスク19本」報道は2022年のもので対象外）",
+   "checked": "2026-11-08",
    "name_en": "Wemyss Malts"
   },
   {
@@ -141,7 +141,7 @@
    "tier_confirmed": true,
    "jp_importer": "ウィスク・イー",
    "check_note": "公式ブログで2026年秋リリースとアイラ・エクスクルーシブを確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Murray McDavid"
   },
   {
@@ -150,8 +150,8 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": "ウィスク・イー",
-   "check_note": "10/28に信濃屋トレーディングとの輸入代理店契約を発表。信濃屋との提携ボトルのうち、詳細が出たラフロイグ2004を掲載。残りは11/6・7の東京ウイスキーフェスティバルで発表予定。輸入元欄は取扱一覧で未確認のため据え置き",
-   "checked": "2026-11-01",
+   "check_note": "業界報道でロングモーン54年（11/6）を確認。信濃屋提携ボトルの残りはWebSearchで詳細を確認できず。輸入元欄は取扱一覧で未確認のため据え置き",
+   "checked": "2026-11-08",
    "name_en": "Duncan Taylor"
   },
   {
@@ -161,7 +161,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式サイトにニュース・新作一覧なし",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Blackadder"
   },
   {
@@ -171,7 +171,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "2026 Odysseyは7月17日発表で期間外。直近90日の自社ボトリング新作は未確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Berry Bros. & Rudd"
   },
   {
@@ -181,7 +181,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ショップの最新リリース欄で4本を確認。ミステリーモルトNo.6は6月発表で期間外",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Thompson Bros."
   },
   {
@@ -191,7 +191,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ショップの最新欄で新作を確認（発表日の記載なし）",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Decadent Drinks (Whisky Sponge)"
   },
   {
@@ -201,7 +201,7 @@
    "tier_confirmed": true,
    "jp_importer": "ウィスク・イー",
    "check_note": "公式サイトのLatest Releasesで3本を確認（発表日の記載なし）",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Watt Whisky"
   },
   {
@@ -210,8 +210,8 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": null,
-   "check_note": "公式サイト取得不可。WebSearchでも直近90日の発表なし",
-   "checked": "2026-11-01",
+   "check_note": "WebSearchで直近90日の公式発表・業界報道なし",
+   "checked": "2026-11-08",
    "name_en": "North Star Spirits"
   },
   {
@@ -221,7 +221,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ショップに商品一覧あり。発表日の記載がなく直近90日か判断できず未掲載",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Dramfool"
   },
   {
@@ -231,7 +231,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ニュースあり。最新はBatch 20（6月）で期間外",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Infrequent Flyers"
   },
   {
@@ -241,7 +241,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ニュースでサウィン2026（7本）を確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Hannah Whisky Merchants"
   },
   {
@@ -251,7 +251,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式サイトに日付つきの新作情報・ショップなし",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "James Eadie"
   },
   {
@@ -260,8 +260,8 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": null,
-   "check_note": "公式サイト取得不可。WebSearchでも直近90日の発表なし",
-   "checked": "2026-11-01",
+   "check_note": "WebSearchで直近90日の公式発表・業界報道なし",
+   "checked": "2026-11-08",
    "name_en": "Langside Distillers"
   },
   {
@@ -270,8 +270,8 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": null,
-   "check_note": "公式サイト取得不可。WebSearchでも直近90日の発表なし",
-   "checked": "2026-11-01",
+   "check_note": "WebSearchで直近90日の公式発表・業界報道なし",
+   "checked": "2026-11-08",
    "name_en": "Golden Cask"
   },
   {
@@ -280,8 +280,8 @@
    "tier": "A",
    "tier_confirmed": false,
    "jp_importer": null,
-   "check_note": "公式サイト取得不可。確認できた2026年ボトリングは酒販店向けが中心で対象外",
-   "checked": "2026-11-01",
+   "check_note": "WebSearchで直近90日の公式発表・業界報道なし",
+   "checked": "2026-11-08",
    "name_en": "The Whisky Agency"
   },
   {
@@ -291,7 +291,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ショップの新着でNo.276〜282を確認（発表日の記載なし）",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Malt Barn"
   },
   {
@@ -301,7 +301,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ショップに新着あり。自社の新作は未確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Sansibar"
   },
   {
@@ -311,7 +311,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "Whiskybase Shopの新着でトマーティン1994を確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Archives"
   },
   {
@@ -321,7 +321,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式カタログのNew表示で2026年ボトリングを確認（発表日の記載なし）",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Wilson & Morgan"
   },
   {
@@ -331,7 +331,7 @@
    "tier_confirmed": true,
    "jp_importer": "ウィスク・イー",
    "check_note": "公式ショップ・ニュースとも2024年2月以降の更新なし",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Samaroli"
   },
   {
@@ -341,7 +341,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ショップで7/28・9/17・10/22公開の新作を確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Single Cask Nation"
   },
   {
@@ -351,7 +351,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式の最新情報は2025年10月が最後。直近90日の公式発表なし",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "T&T TOYAMA"
   },
   {
@@ -361,7 +361,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "自社直販のNEWS・新着を確認。川越まつり記念ボトルはイベント記念のため対象外",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Acorn"
   },
   {
@@ -371,7 +371,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式の新作一覧なし。直近90日の業界メディア報道も未確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Signatory Vintage"
   },
   {
@@ -381,7 +381,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式ニュースでカスクコレクションNo.81を確認",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "A.D. Rattray"
   },
   {
@@ -391,7 +391,7 @@
    "tier_confirmed": true,
    "jp_importer": "ジャパンインポートシステム",
    "check_note": "ボトラー自身の発表なし。ケルティック ラフロイグ1999は輸入元の2月発表で期間外",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Kingsbury"
   },
   {
@@ -401,7 +401,7 @@
    "tier_confirmed": true,
    "jp_importer": null,
    "check_note": "公式サイトにニュース欄・ショップなし",
-   "checked": "2026-11-01",
+   "checked": "2026-11-08",
    "name_en": "Cooper's Choice"
   },
   {
@@ -410,8 +410,8 @@
    "tier": "B",
    "tier_confirmed": false,
    "jp_importer": null,
-   "check_note": "公式サイト取得不可。WebSearchでも直近90日の業界メディア報道なし",
-   "checked": "2026-11-01",
+   "check_note": "WebSearchで直近90日の公式発表・業界報道なし",
+   "checked": "2026-11-08",
    "name_en": "Jack Wiebers"
   }
  ],
@@ -3702,6 +3702,68 @@
    "checked": "2026-11-01",
    "name": "ラフロイグ 22年 2004",
    "name_en": "Laphroaig 22 2004 The Octave Shinanoya Series Duncan Taylor"
+  },
+  {
+   "id": "wemyss-castle-collection-glenglassaugh-10",
+   "bottler_id": "wemyss",
+   "series": "キャッスル・コレクション",
+   "distillery": "グレングラッサ",
+   "region": "ハイランド",
+   "vintage": null,
+   "age": 10,
+   "cask": "シェリー樽",
+   "abv": 46,
+   "bottles": null,
+   "size_ml": 700,
+   "price": {
+    "amount": 54,
+    "currency": "GBP"
+   },
+   "jp_price": null,
+   "announced": "2026-11-05",
+   "first_seen": "2026-11-08",
+   "source_url": "https://thewhiskeywash.com/whiskey-news/wemyss-malts-castle-collection-begins-with-glenglassaugh-10-year-old/",
+   "source_name": "The Whiskey Wash",
+   "collab": null,
+   "jp_status": "jp_route",
+   "jp_note": "輸入元：ウィスク・イー",
+   "buy_status": "buy_unknown",
+   "buy_note": "",
+   "note": "新シリーズの第1弾。世界250ケース限定、英国で11月5日発売",
+   "checked": "2026-11-08",
+   "name": "グレングラッサ 10年",
+   "name_en": "Glenglassaugh 10 The Castle Collection Wemyss Malts"
+  },
+  {
+   "id": "duncantaylor-rarest-longmorn-1972-54",
+   "bottler_id": "duncantaylor",
+   "series": "レアレスト",
+   "distillery": "ロングモーン",
+   "region": "スペイサイド",
+   "vintage": "1972",
+   "age": 54,
+   "cask": null,
+   "abv": 49.3,
+   "bottles": 109,
+   "size_ml": null,
+   "price": {
+    "amount": 4995,
+    "currency": "GBP"
+   },
+   "jp_price": null,
+   "announced": "2026-11-06",
+   "first_seen": "2026-11-08",
+   "source_url": "https://thewhiskeywash.com/whiskey-news/duncan-taylor-releases-54-year-old-longmorn-single-cask/",
+   "source_name": "The Whiskey Wash",
+   "collab": null,
+   "jp_status": "jp_route",
+   "jp_note": "輸入元：ウィスク・イー",
+   "buy_status": "buy_online",
+   "buy_note": "The Spirits Embassy",
+   "note": "1972年8月蒸留のシングルカスク",
+   "checked": "2026-11-08",
+   "name": "ロングモーン 54年 1972",
+   "name_en": "Longmorn 54 1972 The Rarest Single Cask Duncan Taylor"
   }
  ]
 }
